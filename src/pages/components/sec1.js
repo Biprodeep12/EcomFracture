@@ -140,7 +140,6 @@ export default function Sect() {
                   <div className={styles.dropdownBox}></div>
                 </div>
               </div>
-              <div className={styles.more}>More</div>
             </div>
             <div className={styles.sec1x2}>
               <div className={styles.imgSlCont}>
@@ -205,6 +204,30 @@ export default function Sect() {
       </section>
       <section className={styles.threeColumnCont}>
         {[
+          {
+            head: 'Recommeded Items',
+            title:
+              'nisatraders DRAGON DOUBLE FLAME SOLID CIGAR CIGARETTE LIGHTER Pocket',
+            p1: '₹3,999',
+            p2: '₹1,999',
+            p3: '50% off',
+          },
+          {
+            head: 'Recommeded Items',
+            title:
+              'nisatraders DRAGON DOUBLE FLAME SOLID CIGAR CIGARETTE LIGHTER Pocket',
+            p1: '₹3,999',
+            p2: '₹1,999',
+            p3: '50% off',
+          },
+          {
+            head: 'Recommeded Items',
+            title:
+              'nisatraders DRAGON DOUBLE FLAME SOLID CIGAR CIGARETTE LIGHTER Pocket',
+            p1: '₹3,999',
+            p2: '₹1,999',
+            p3: '50% off',
+          },
           {
             head: 'Recommeded Items',
             title:

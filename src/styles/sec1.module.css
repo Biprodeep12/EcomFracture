@@ -18,7 +18,7 @@
 .sec1x1 {
   margin: 10px 10px 0 10px;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   padding: 0 10px 0 10px;
 }
 .fashion,
@@ -230,12 +230,13 @@
   padding-left: 20px;
   align-self: end;
   padding-bottom: 5px;
+  text-wrap: nowrap;
 }
 .sec2items {
   display: flex;
   flex-direction: row;
   gap: 80px;
-  overflow: hidden;
+  overflow-x: scroll;
   justify-content: center;
 }
 .rowItems {
@@ -257,9 +258,9 @@
 }
 .threeColumnCont {
   width: 100%;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   padding: 0 10px 10px 10px;
   gap: 10px;
 }
@@ -267,7 +268,6 @@
 .tCC2,
 .tCC3 {
   width: 100%;
-  max-width: 479.4px;
   background-color: white;
   height: 630px;
   border-radius: 10px;
@@ -313,7 +313,8 @@
 .tccItemTitle {
   text-wrap: nowrap;
   overflow: hidden;
-  width: 190px;
+  width: 100%;
+  max-width: 190px;
   text-overflow: ellipsis;
 }
 .tccItemDes {
@@ -324,7 +325,6 @@
 }
 .pPrt1 {
   color: #b0b0b0;
-
   text-decoration: line-through;
 }
 .tccItemDes h3 {
@@ -336,6 +336,7 @@
   text-decoration: none;
   font-weight: 600;
 }
+
 .threeParal {
   width: 100%;
   display: grid;
@@ -368,6 +369,7 @@
 .tp1INx {
   display: grid;
   grid-template-columns: 70% 30%;
+  position: relative;
 }
 .lapsvg {
   width: 200px;
@@ -423,4 +425,116 @@
   align-items: center;
   font-size: 28px;
   font-weight: 600;
+}
+@media screen and (max-width: 1244px) {
+  .threeColumnCont {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .threeParal {
+    grid-template-columns: 1fr 1fr;
+  }
+  .tP3 {
+    display: none;
+  }
+  .tp1INx {
+    grid-template-columns: 100%;
+  }
+  .likeshareCont {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    transform: scale(0.8);
+  }
+  .sec2items {
+    justify-content: left;
+    padding: 0 45px;
+  }
+}
+@media screen and (max-width: 910px) {
+  .threeColumnCont {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+  .tccItemTitle {
+    width: 100%;
+    max-width: 140px;
+  }
+  .tccItemDes {
+    text-align: center;
+  }
+  .titleDes {
+    padding-bottom: 20px;
+  }
+  .likeshareCont {
+    top: 0;
+    right: 10px;
+    transform: scale(0.7);
+  }
+  .sec1x2 {
+    display: none;
+  }
+  .sec1 {
+    grid-template-columns: 100%;
+    grid-template-rows: 35% 65%;
+  }
+  .sec1x {
+    grid-template-rows: 100%;
+  }
+  .sec1xx {
+    margin: 10px;
+    gap: 8px;
+  }
+  .sec2 h1 {
+    justify-self: center;
+    padding-left: 0;
+    align-self: end;
+    padding-bottom: 5px;
+    text-wrap: nowrap;
+    font-size: 22px;
+  }
+  .tccHead h1 {
+    font-size: 22px;
+  }
+  .tccHead {
+    padding: 20px 0 0 15px;
+  }
+  .tccAllItems1,
+  .tccAllItems2,
+  .tccAllItems3,
+  .tccAllItems4 {
+    margin-top: 0;
+  }
+}
+@media screen and (max-width: 600px) {
+  .tP1 {
+    margin: 10px 10px 0px 10px;
+  }
+  .tP2 {
+    margin: 10px 10px 0px 0px;
+  }
+  .tp1IN {
+    margin-bottom: 10px;
+  }
+  .tp1IN {
+    grid-template-rows: 50% 50%;
+  }
+  .lapsvg {
+    width: 150px;
+    height: 150px;
+  }
+  .Fouritems {
+    width: 140px;
+    height: 140px;
+  }
+  .sec1x1 {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  .topIcons {
+    width: 70px;
+    height: 70px;
+  }
 }
