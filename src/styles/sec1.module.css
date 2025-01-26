@@ -476,9 +476,13 @@
   .sec1x2 {
     display: none;
   }
+  .sec1Cont {
+    height: 770px;
+  }
   .sec1 {
+    height: 705px;
     grid-template-columns: 100%;
-    grid-template-rows: 35% 65%;
+    grid-template-rows: 32% 68%;
   }
   .sec1x {
     grid-template-rows: 100%;

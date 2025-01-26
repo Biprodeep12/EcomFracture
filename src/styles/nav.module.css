@@ -1,3 +1,36 @@
+.mobileRes {
+  position: fixed;
+  height: 65px;
+  background-color: #ffffff;
+  bottom: 0;
+  width: 100%;
+  z-index: 100;
+  grid-template-columns: 1fr 1fr 1fr;
+  display: none;
+}
+.mobileHome,
+.mobileSrch,
+.mobileCart {
+  align-self: center;
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.hme {
+  height: 24px;
+  width: 24px;
+}
+.mobileHome img,
+.mobileSrch img,
+.mobileCart img {
+  transform: scale(1.05);
+}
 .nav {
   background-color: white;
   display: grid;
@@ -124,5 +157,8 @@
   .NavWish,
   .NavCart {
     display: none;
+  }
+  .mobileRes {
+    display: grid;
   }
 }
