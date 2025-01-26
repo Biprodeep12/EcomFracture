@@ -257,27 +257,24 @@
 }
 .threeColumnCont {
   width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0 10px 10px 10px;
+  gap: 10px;
 }
 .tCC1,
 .tCC2,
 .tCC3 {
+  width: 100%;
+  max-width: 479.4px;
   background-color: white;
   height: 630px;
   border-radius: 10px;
   display: grid;
   grid-template-rows: 10% 90%;
 }
-.tCC1 {
-  margin: 0 10px 10px 10px;
-}
-.tCC2 {
-  margin: 0 10px 10px 0;
-}
-.tCC3 {
-  margin: 0 10px 10px 0;
-}
+
 .tccHead {
   padding: 20px 0 20px 15px;
 }
@@ -379,9 +376,30 @@
   justify-self: center;
   margin: 20px;
 }
-.likeshare {
+.likeshareCont {
   align-self: center;
   justify-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.likeshare {
+  border-radius: 100px;
+  background-color: #ffffff;
+  border: 2px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.likeshare:hover {
+  background-color: #ccc;
+}
+.likeTP,
+.shareTP {
+  margin: 10px;
+  width: 35px;
+  height: 35px;
 }
 .titleDes {
   align-self: center;

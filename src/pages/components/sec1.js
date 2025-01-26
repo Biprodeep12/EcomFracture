@@ -13,6 +13,9 @@ import furn from '@/images/furn.svg';
 import toy from '@/images/toy.svg';
 import dpbla from '@/images/dropdownBlack.svg';
 import dpblu from '@/images/dropdownblue.svg';
+import heart from '@/images/heart.svg';
+import share from '@/images/share.svg';
+import heartRed from '@/images/heartRed.svg';
 
 export default function Sect() {
   const images = [lap1, lap2, lap3];
@@ -160,36 +163,20 @@ export default function Sect() {
           </div>
           <div className={styles.sec1xx}>
             <h2>Offers</h2>
-            <div className={styles.offer}>
-              <div className={styles.offerback}></div>
-              <div className={styles.offerfront}>
-                <h1 className={styles.offH1}>40%</h1>
+            {[
+              { price: '40%' },
+              { price: '40%' },
+              { price: '40%' },
+              { price: '40%' },
+              { price: '40%' },
+            ].map((form, index) => (
+              <div key={index} className={styles.offer}>
+                <div className={styles.offerback}></div>
+                <div className={styles.offerfront}>
+                  <h1 className={styles.offH1}>{form.price}</h1>
+                </div>
               </div>
-            </div>
-            <div className={styles.offer}>
-              <div className={styles.offerback}></div>
-              <div className={styles.offerfront}>
-                <h1 className={styles.offH1}>60%</h1>
-              </div>
-            </div>
-            <div className={styles.offer}>
-              <div className={styles.offerback}></div>
-              <div className={styles.offerfront}>
-                <h1 className={styles.offH1}>20%</h1>
-              </div>
-            </div>
-            <div className={styles.offer}>
-              <div className={styles.offerback}></div>
-              <div className={styles.offerfront}>
-                <h1 className={styles.offH1}>60%</h1>
-              </div>
-            </div>
-            <div className={styles.offer}>
-              <div className={styles.offerback}></div>
-              <div className={styles.offerfront}>
-                <h1 className={styles.offH1}>40%</h1>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -197,264 +184,117 @@ export default function Sect() {
         <div className={styles.sec2}>
           <h1>Top Deals on TVs & Appliances</h1>
           <div className={styles.sec2items}>
-            <div className={styles.rowItems}>
-              <Image src={lapsvg} alt='/' className={styles.imgitems} />
-              <div className={styles.itemDes}>
-                <p>Godrej Refrigerator</p>
-                <h4>From ₹7,240</h4>
+            {[
+              { title: 'Godrej Refrigerator', price: 'From ₹7,240' },
+              { title: 'Godrej Refrigerator', price: 'From ₹7,240' },
+              { title: 'Godrej Refrigerator', price: 'From ₹7,240' },
+              { title: 'Godrej Refrigerator', price: 'From ₹7,240' },
+              { title: 'Godrej Refrigerator', price: 'From ₹7,240' },
+              { title: 'Godrej Refrigerator', price: 'From ₹7,240' },
+            ].map((des, index) => (
+              <div key={index} className={styles.rowItems}>
+                <Image src={lapsvg} alt='/' className={styles.imgitems} />
+                <div className={styles.itemDes}>
+                  <p>{des.title}</p>
+                  <h4>{des.price}</h4>
+                </div>
               </div>
-            </div>
-            <div className={styles.rowItems}>
-              <Image src={lapsvg} alt='/' className={styles.imgitems} />
-              <div className={styles.itemDes}>
-                <p>Godrej Refrigerator</p>
-                <h4>From ₹7,240</h4>
-              </div>
-            </div>
-            <div className={styles.rowItems}>
-              <Image src={lapsvg} alt='/' className={styles.imgitems} />
-              <div className={styles.itemDes}>
-                <p>Godrej Refrigerator</p>
-                <h4>From ₹7,240</h4>
-              </div>
-            </div>
-            <div className={styles.rowItems}>
-              <Image src={lapsvg} alt='/' className={styles.imgitems} />
-              <div className={styles.itemDes}>
-                <p>Godrej Refrigerator</p>
-                <h4>From ₹7,240</h4>
-              </div>
-            </div>
-            <div className={styles.rowItems}>
-              <Image src={lapsvg} alt='/' className={styles.imgitems} />
-              <div className={styles.itemDes}>
-                <p>Godrej Refrigerator</p>
-                <h4>From ₹7,240</h4>
-              </div>
-            </div>
-            <div className={styles.rowItems}>
-              <Image src={lapsvg} alt='/' className={styles.imgitems} />
-              <div className={styles.itemDes}>
-                <p>Godrej Refrigerator</p>
-                <h4>From ₹7,240</h4>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
       <section className={styles.threeColumnCont}>
-        <div className={styles.tCC1}>
-          <div className={styles.tccHead}>
-            <h1>Recommeded Items</h1>
-          </div>
-          <div className={styles.tccItems}>
-            <div className={styles.tccAllItems1}>
-              <Image src={lapsvg} alt='4item' className={styles.Fouritems} />
-              <div className={styles.tccItemTitle}>
-                nisatraders DRAGON DOUBLE FLAME SOLID CIGAR CIGARETTE LIGHTER
-                Pocket
-              </div>
-              <div className={styles.tccItemDes}>
-                <p className={styles.pPrt1}>₹3,999</p>
-                <h3>₹1,999</h3>
-                <p className={styles.pPrt2}>50% off</p>
-              </div>
+        {[
+          {
+            head: 'Recommeded Items',
+            title:
+              'nisatraders DRAGON DOUBLE FLAME SOLID CIGAR CIGARETTE LIGHTER Pocket',
+            p1: '₹3,999',
+            p2: '₹1,999',
+            p3: '50% off',
+          },
+          {
+            head: 'Recommeded Items',
+            title:
+              'nisatraders DRAGON DOUBLE FLAME SOLID CIGAR CIGARETTE LIGHTER Pocket',
+            p1: '₹3,999',
+            p2: '₹1,999',
+            p3: '50% off',
+          },
+          {
+            head: 'Recommeded Items',
+            title:
+              'nisatraders DRAGON DOUBLE FLAME SOLID CIGAR CIGARETTE LIGHTER Pocket',
+            p1: '₹3,999',
+            p2: '₹1,999',
+            p3: '50% off',
+          },
+        ].map((info, index) => (
+          <div key={index} className={styles.tCC1}>
+            <div className={styles.tccHead}>
+              <h1>{info.head}</h1>
             </div>
-            <div className={styles.tccAllItems2}>
-              <Image src={lapsvg} alt='4item' className={styles.Fouritems} />
-              <div className={styles.tccItemTitle}>
-                nisatraders DRAGON DOUBLE FLAME SOLID CIGAR CIGARETTE LIGHTER
-                Pocket
+            <div className={styles.tccItems}>
+              <div className={styles.tccAllItems1}>
+                <Image src={lapsvg} alt='4item' className={styles.Fouritems} />
+                <div className={styles.tccItemTitle}>{info.title}</div>
+                <div className={styles.tccItemDes}>
+                  <p className={styles.pPrt1}>{info.p1}</p>
+                  <h3>{info.p2}</h3>
+                  <p className={styles.pPrt2}>{info.p3}</p>
+                </div>
               </div>
-              <div className={styles.tccItemDes}>
-                <p className={styles.pPrt1}>₹3,999</p>
-                <h3>₹1,999</h3>
-                <p className={styles.pPrt2}>50% off</p>
+              <div className={styles.tccAllItems2}>
+                <Image src={lapsvg} alt='4item' className={styles.Fouritems} />
+                <div className={styles.tccItemTitle}>{info.title}</div>
+                <div className={styles.tccItemDes}>
+                  <p className={styles.pPrt1}>{info.p1}</p>
+                  <h3>{info.p2}</h3>
+                  <p className={styles.pPrt2}>{info.p3}</p>
+                </div>
               </div>
-            </div>
-            <div className={styles.tccAllItems3}>
-              <Image src={lapsvg} alt='4item' className={styles.Fouritems} />
-              <div className={styles.tccItemTitle}>
-                nisatraders DRAGON DOUBLE FLAME SOLID CIGAR CIGARETTE LIGHTER
-                Pocket
+              <div className={styles.tccAllItems3}>
+                <Image src={lapsvg} alt='4item' className={styles.Fouritems} />
+                <div className={styles.tccItemTitle}>{info.title}</div>
+                <div className={styles.tccItemDes}>
+                  <p className={styles.pPrt1}>{info.p1}</p>
+                  <h3>{info.p2}</h3>
+                  <p className={styles.pPrt2}>{info.p3}</p>
+                </div>
               </div>
-              <div className={styles.tccItemDes}>
-                <p className={styles.pPrt1}>₹3,999</p>
-                <h3>₹1,999</h3>
-                <p className={styles.pPrt2}>50% off</p>
-              </div>
-            </div>
-            <div className={styles.tccAllItems4}>
-              <Image src={lapsvg} alt='4item' className={styles.Fouritems} />
-              <div className={styles.tccItemTitle}>
-                nisatraders DRAGON DOUBLE FLAME SOLID CIGAR CIGARETTE LIGHTER
-                Pocket
-              </div>
-              <div className={styles.tccItemDes}>
-                <p className={styles.pPrt1}>₹3,999</p>
-                <h3>₹1,999</h3>
-                <p className={styles.pPrt2}>50% off</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className={styles.tCC2}>
-          <div className={styles.tccHead}>
-            <h1>Recommeded Items</h1>
-          </div>
-          <div className={styles.tccItems}>
-            <div className={styles.tccAllItems1}>
-              <Image src={lapsvg} alt='4item' className={styles.Fouritems} />
-              <div className={styles.tccItemTitle}>
-                nisatraders DRAGON DOUBLE FLAME SOLID CIGAR CIGARETTE LIGHTER
-                Pocket
-              </div>
-              <div className={styles.tccItemDes}>
-                <p className={styles.pPrt1}>₹3,999</p>
-                <h3>₹1,999</h3>
-                <p className={styles.pPrt2}>50% off</p>
-              </div>
-            </div>
-            <div className={styles.tccAllItems2}>
-              <Image src={lapsvg} alt='4item' className={styles.Fouritems} />
-              <div className={styles.tccItemTitle}>
-                nisatraders DRAGON DOUBLE FLAME SOLID CIGAR CIGARETTE LIGHTER
-                Pocket
-              </div>
-              <div className={styles.tccItemDes}>
-                <p className={styles.pPrt1}>₹3,999</p>
-                <h3>₹1,999</h3>
-                <p className={styles.pPrt2}>50% off</p>
-              </div>
-            </div>
-            <div className={styles.tccAllItems3}>
-              <Image src={lapsvg} alt='4item' className={styles.Fouritems} />
-              <div className={styles.tccItemTitle}>
-                nisatraders DRAGON DOUBLE FLAME SOLID CIGAR CIGARETTE LIGHTER
-                Pocket
-              </div>
-              <div className={styles.tccItemDes}>
-                <p className={styles.pPrt1}>₹3,999</p>
-                <h3>₹1,999</h3>
-                <p className={styles.pPrt2}>50% off</p>
-              </div>
-            </div>
-            <div className={styles.tccAllItems4}>
-              <Image src={lapsvg} alt='4item' className={styles.Fouritems} />
-              <div className={styles.tccItemTitle}>
-                nisatraders DRAGON DOUBLE FLAME SOLID CIGAR CIGARETTE LIGHTER
-                Pocket
-              </div>
-              <div className={styles.tccItemDes}>
-                <p className={styles.pPrt1}>₹3,999</p>
-                <h3>₹1,999</h3>
-                <p className={styles.pPrt2}>50% off</p>
+              <div className={styles.tccAllItems4}>
+                <Image src={lapsvg} alt='4item' className={styles.Fouritems} />
+                <div className={styles.tccItemTitle}>{info.title}</div>
+                <div className={styles.tccItemDes}>
+                  <p className={styles.pPrt1}>{info.p1}</p>
+                  <h3>{info.p2}</h3>
+                  <p className={styles.pPrt2}>{info.p3}</p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div className={styles.tCC3}>
-          <div className={styles.tccHead}>
-            <h1>Recommeded Items</h1>
-          </div>
-          <div className={styles.tccItems}>
-            <div className={styles.tccAllItems1}>
-              <Image src={lapsvg} alt='4item' className={styles.Fouritems} />
-              <div className={styles.tccItemTitle}>
-                nisatraders DRAGON DOUBLE FLAME SOLID CIGAR CIGARETTE LIGHTER
-                Pocket
-              </div>
-              <div className={styles.tccItemDes}>
-                <p className={styles.pPrt1}>₹3,999</p>
-                <h3>₹1,999</h3>
-                <p className={styles.pPrt2}>50% off</p>
-              </div>
-            </div>
-            <div className={styles.tccAllItems2}>
-              <Image src={lapsvg} alt='4item' className={styles.Fouritems} />
-              <div className={styles.tccItemTitle}>
-                nisatraders DRAGON DOUBLE FLAME SOLID CIGAR CIGARETTE LIGHTER
-                Pocket
-              </div>
-              <div className={styles.tccItemDes}>
-                <p className={styles.pPrt1}>₹3,999</p>
-                <h3>₹1,999</h3>
-                <p className={styles.pPrt2}>50% off</p>
-              </div>
-            </div>
-            <div className={styles.tccAllItems3}>
-              <Image src={lapsvg} alt='4item' className={styles.Fouritems} />
-              <div className={styles.tccItemTitle}>
-                nisatraders DRAGON DOUBLE FLAME SOLID CIGAR CIGARETTE LIGHTER
-                Pocket
-              </div>
-              <div className={styles.tccItemDes}>
-                <p className={styles.pPrt1}>₹3,999</p>
-                <h3>₹1,999</h3>
-                <p className={styles.pPrt2}>50% off</p>
-              </div>
-            </div>
-            <div className={styles.tccAllItems4}>
-              <Image src={lapsvg} alt='4item' className={styles.Fouritems} />
-              <div className={styles.tccItemTitle}>
-                nisatraders DRAGON DOUBLE FLAME SOLID CIGAR CIGARETTE LIGHTER
-                Pocket
-              </div>
-              <div className={styles.tccItemDes}>
-                <p className={styles.pPrt1}>₹3,999</p>
-                <h3>₹1,999</h3>
-                <p className={styles.pPrt2}>50% off</p>
-              </div>
-            </div>
-          </div>
-        </div>
+        ))}
       </section>
       <section className={styles.sec2Cont}>
         <div className={styles.sec2}>
           <h1>Furniture Deals</h1>
           <div className={styles.sec2items}>
-            <div className={styles.rowItems}>
-              <Image src={lapsvg} alt='/' className={styles.imgitems} />
-              <div className={styles.itemDes}>
-                <p>Godrej Refrigerator</p>
-                <h4>From ₹7,240</h4>
+            {[
+              { title: 'Godrej Refrigerator', price: 'From ₹7,240' },
+              { title: 'Godrej Refrigerator', price: 'From ₹7,240' },
+              { title: 'Godrej Refrigerator', price: 'From ₹7,240' },
+              { title: 'Godrej Refrigerator', price: 'From ₹7,240' },
+              { title: 'Godrej Refrigerator', price: 'From ₹7,240' },
+              { title: 'Godrej Refrigerator', price: 'From ₹7,240' },
+            ].map((des, index) => (
+              <div key={index} className={styles.rowItems}>
+                <Image src={lapsvg} alt='/' className={styles.imgitems} />
+                <div className={styles.itemDes}>
+                  <p>{des.title}</p>
+                  <h4>{des.price}</h4>
+                </div>
               </div>
-            </div>
-            <div className={styles.rowItems}>
-              <Image src={lapsvg} alt='/' className={styles.imgitems} />
-              <div className={styles.itemDes}>
-                <p>Godrej Refrigerator</p>
-                <h4>From ₹7,240</h4>
-              </div>
-            </div>
-            <div className={styles.rowItems}>
-              <Image src={lapsvg} alt='/' className={styles.imgitems} />
-              <div className={styles.itemDes}>
-                <p>Godrej Refrigerator</p>
-                <h4>From ₹7,240</h4>
-              </div>
-            </div>
-            <div className={styles.rowItems}>
-              <Image src={lapsvg} alt='/' className={styles.imgitems} />
-              <div className={styles.itemDes}>
-                <p>Godrej Refrigerator</p>
-                <h4>From ₹7,240</h4>
-              </div>
-            </div>
-            <div className={styles.rowItems}>
-              <Image src={lapsvg} alt='/' className={styles.imgitems} />
-              <div className={styles.itemDes}>
-                <p>Godrej Refrigerator</p>
-                <h4>From ₹7,240</h4>
-              </div>
-            </div>
-            <div className={styles.rowItems}>
-              <Image src={lapsvg} alt='/' className={styles.imgitems} />
-              <div className={styles.itemDes}>
-                <p>Godrej Refrigerator</p>
-                <h4>From ₹7,240</h4>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -488,10 +328,13 @@ export default function Sect() {
             <div key={index} className={styles.tp1IN}>
               <div className={styles.tp1INx}>
                 <Image src={lapsvg} alt='lapsvg' className={styles.lapsvg} />
-                <div className={styles.likeshare}>
-                  LIKE
-                  <br />
-                  SHARE
+                <div className={styles.likeshareCont}>
+                  <div className={styles.likeshare}>
+                    <Image src={heart} alt='like' className={styles.likeTP} />
+                  </div>
+                  <div className={styles.likeshare}>
+                    <Image src={share} alt='share' className={styles.shareTP} />
+                  </div>
                 </div>
               </div>
               <div className={styles.titleDes}>{laptop.title}</div>
@@ -525,10 +368,13 @@ export default function Sect() {
             <div key={index} className={styles.tp1IN}>
               <div className={styles.tp1INx}>
                 <Image src={lapsvg} alt='lapsvg' className={styles.lapsvg} />
-                <div className={styles.likeshare}>
-                  LIKE
-                  <br />
-                  SHARE
+                <div className={styles.likeshareCont}>
+                  <div className={styles.likeshare}>
+                    <Image src={heart} alt='like' className={styles.likeTP} />
+                  </div>
+                  <div className={styles.likeshare}>
+                    <Image src={share} alt='share' className={styles.shareTP} />
+                  </div>
                 </div>
               </div>
               <div className={styles.titleDes}>{laptop.title}</div>
@@ -562,10 +408,13 @@ export default function Sect() {
             <div key={index} className={styles.tp1IN}>
               <div className={styles.tp1INx}>
                 <Image src={lapsvg} alt='lapsvg' className={styles.lapsvg} />
-                <div className={styles.likeshare}>
-                  LIKE
-                  <br />
-                  SHARE
+                <div className={styles.likeshareCont}>
+                  <div className={styles.likeshare}>
+                    <Image src={heart} alt='like' className={styles.likeTP} />
+                  </div>
+                  <div className={styles.likeshare}>
+                    <Image src={share} alt='share' className={styles.shareTP} />
+                  </div>
                 </div>
               </div>
               <div className={styles.titleDes}>{laptop.title}</div>
@@ -577,48 +426,22 @@ export default function Sect() {
         <div className={styles.sec2}>
           <h1>Recently Viewed</h1>
           <div className={styles.sec2items}>
-            <div className={styles.rowItems}>
-              <Image src={lapsvg} alt='/' className={styles.imgitems} />
-              <div className={styles.itemDes}>
-                <p>Godrej Refrigerator</p>
-                <h4>From ₹7,240</h4>
+            {[
+              { title: 'Godrej Refrigerator', price: 'From ₹7,240' },
+              { title: 'Godrej Refrigerator', price: 'From ₹7,240' },
+              { title: 'Godrej Refrigerator', price: 'From ₹7,240' },
+              { title: 'Godrej Refrigerator', price: 'From ₹7,240' },
+              { title: 'Godrej Refrigerator', price: 'From ₹7,240' },
+              { title: 'Godrej Refrigerator', price: 'From ₹7,240' },
+            ].map((des, index) => (
+              <div key={index} className={styles.rowItems}>
+                <Image src={lapsvg} alt='/' className={styles.imgitems} />
+                <div className={styles.itemDes}>
+                  <p>{des.title}</p>
+                  <h4>{des.price}</h4>
+                </div>
               </div>
-            </div>
-            <div className={styles.rowItems}>
-              <Image src={lapsvg} alt='/' className={styles.imgitems} />
-              <div className={styles.itemDes}>
-                <p>Godrej Refrigerator</p>
-                <h4>From ₹7,240</h4>
-              </div>
-            </div>
-            <div className={styles.rowItems}>
-              <Image src={lapsvg} alt='/' className={styles.imgitems} />
-              <div className={styles.itemDes}>
-                <p>Godrej Refrigerator</p>
-                <h4>From ₹7,240</h4>
-              </div>
-            </div>
-            <div className={styles.rowItems}>
-              <Image src={lapsvg} alt='/' className={styles.imgitems} />
-              <div className={styles.itemDes}>
-                <p>Godrej Refrigerator</p>
-                <h4>From ₹7,240</h4>
-              </div>
-            </div>
-            <div className={styles.rowItems}>
-              <Image src={lapsvg} alt='/' className={styles.imgitems} />
-              <div className={styles.itemDes}>
-                <p>Godrej Refrigerator</p>
-                <h4>From ₹7,240</h4>
-              </div>
-            </div>
-            <div className={styles.rowItems}>
-              <Image src={lapsvg} alt='/' className={styles.imgitems} />
-              <div className={styles.itemDes}>
-                <p>Godrej Refrigerator</p>
-                <h4>From ₹7,240</h4>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
