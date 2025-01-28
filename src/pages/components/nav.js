@@ -5,7 +5,7 @@ import heart from '@/images/heart.svg';
 import search from '@/images/search.svg';
 import home from '@/images/home.svg';
 
-export default function Nav() {
+export default function Nav({ setDisplaySign }) {
   return (
     <>
       <nav className={styles.nav}>
@@ -24,7 +24,9 @@ export default function Nav() {
           <Image src={heart} alt='wish' className={styles.heart} />
           <p className={styles.textCartWish}>Wishlist</p>
         </div>
-        <div className={styles.NavAcc}>Sign In/Sign Out</div>
+        <div onClick={() => setDisplaySign(false)} className={styles.NavAcc}>
+          Sign In/Sign Out
+        </div>
       </nav>
       <div className={styles.mobileRes}>
         <div className={styles.mobileHome}>

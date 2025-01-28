@@ -48,98 +48,62 @@ export default function Sect() {
         <div className={styles.sec1}>
           <div className={styles.sec1x}>
             <div className={styles.sec1x1}>
-              <div className={styles.fashion}>
-                <Image
-                  onMouseEnter={() => setHovered1(true)}
-                  onMouseLeave={() => setHovered1(false)}
-                  src={fash}
-                  className={styles.topIcons}
-                  alt='fashion'
-                />
-                <div
-                  onMouseEnter={() => setHovered1(true)}
-                  onMouseLeave={() => setHovered1(false)}
-                  className={styles.topIconDes}>
-                  Fashion
-                  <Image
-                    src={hovered1 ? dpblu : dpbla}
-                    alt='drop'
-                    className={`${styles.dropdown} ${
-                      hovered1 ? styles.rotated : ''
-                    }`}
-                  />
-                  <div className={styles.dropdownBox}></div>
-                </div>
-              </div>
-              <div className={styles.electron}>
-                <Image
-                  onMouseEnter={() => setHovered2(true)}
-                  onMouseLeave={() => setHovered2(false)}
-                  src={elect}
-                  className={styles.topIcons}
-                  alt='elctronics'
-                />
-                <div
-                  onMouseEnter={() => setHovered2(true)}
-                  onMouseLeave={() => setHovered2(false)}
-                  className={styles.topIconDes}>
-                  Electronics
-                  <Image
-                    src={hovered2 ? dpblu : dpbla}
-                    alt='drop'
-                    className={`${styles.dropdown} ${
-                      hovered2 ? styles.rotated : ''
-                    }`}
-                  />
-                  <div className={styles.dropdownBox}></div>
-                </div>
-              </div>
-              <div className={styles.homefurn}>
-                <Image
-                  onMouseEnter={() => setHovered3(true)}
-                  onMouseLeave={() => setHovered3(false)}
-                  src={furn}
-                  className={styles.topIcons}
-                  alt='furniture'
-                />
-                <div
-                  className={styles.topIconDes}
-                  onMouseEnter={() => setHovered3(true)}
-                  onMouseLeave={() => setHovered3(false)}>
-                  Home & Furniture
-                  <Image
-                    src={hovered3 ? dpblu : dpbla}
-                    alt='drop'
-                    className={`${styles.dropdown} ${
-                      hovered3 ? styles.rotated : ''
-                    }`}
-                  />
-                  <div className={styles.dropdownBox}></div>
-                </div>
-              </div>
-              <div className={styles.BeautyTous}>
-                <Image
-                  src={toy}
-                  onMouseEnter={() => setHovered4(true)}
-                  onMouseLeave={() => setHovered4(false)}
-                  className={styles.topIcons}
-                  alt='toys'
-                />
-                <div
-                  onMouseEnter={() => setHovered4(true)}
-                  onMouseLeave={() => setHovered4(false)}
-                  className={styles.topIconDes}>
-                  Beauty, Toys & More
-                  <Image
-                    src={hovered4 ? dpblu : dpbla}
-                    alt='drop'
-                    className={`${styles.dropdown} ${
-                      hovered4 ? styles.rotated : ''
-                    }`}
-                  />
-                  <div className={styles.dropdownBox}></div>
-                </div>
-              </div>
+              {[
+                {
+                  hoverState: [hovered1, setHovered1],
+                  src: fash,
+                  alt: 'fashion',
+                  title: 'Fashion',
+                },
+                {
+                  hoverState: [hovered2, setHovered2],
+                  src: elect,
+                  alt: 'electron',
+                  title: 'Electronics',
+                },
+                {
+                  hoverState: [hovered3, setHovered3],
+                  src: furn,
+                  alt: 'furniture',
+                  title: 'Home & Furniture',
+                },
+                {
+                  hoverState: [hovered4, setHovered4],
+                  src: toy,
+                  alt: 'toy',
+                  title: 'Beauty, Toys & More',
+                },
+              ].map((cate, index) => {
+                const [hovered, setHovered] = cate.hoverState;
+
+                return (
+                  <div key={index} className={styles.category}>
+                    <Image
+                      onMouseEnter={() => setHovered(true)}
+                      onMouseLeave={() => setHovered(false)}
+                      src={cate.src}
+                      width={50}
+                      height={50}
+                      className={styles.topIcons}
+                      alt={cate.alt}
+                    />
+                    <div
+                      onMouseEnter={() => setHovered(true)}
+                      onMouseLeave={() => setHovered(false)}
+                      className={styles.topIconDes}>
+                      {cate.title}
+                      <Image
+                        src={hovered ? dpblu : dpbla}
+                        alt='drop'
+                        className={`${styles.dropdown} ${
+                          hovered ? styles.rotated : ''
+                        }`}
+                      />
+                      <div className={styles.dropdownBox}></div>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
             <div className={styles.sec1x2}>
               <div className={styles.imgSlCont}>

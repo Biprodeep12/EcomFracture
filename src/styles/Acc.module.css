@@ -1,0 +1,146 @@
+.backgroundAuth {
+  position: fixed;
+  z-index: 90;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@keyframes intro {
+  from {
+    opacity: 0;
+    margin-top: -100px;
+  }
+  to {
+    opacity: 1;
+    margin-top: 0;
+  }
+}
+.LoginBox,
+.RegisBox {
+  animation: intro 0.5s ease forwards;
+  margin-top: -50px;
+  background-color: white;
+  width: 450px;
+  display: flex;
+  opacity: 0;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 15px;
+  padding: 20px 0 30px 0;
+  border: 1px solid #ccc;
+  position: relative;
+}
+.BoxClose {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ccc;
+  font-size: 20px;
+  background-color: #ccc;
+  cursor: pointer;
+}
+.BoxClose:hover {
+  color: white;
+
+  background-color: rgb(255, 101, 101);
+}
+.LoginBox h1,
+.RegisBox h1 {
+  margin: 20px 0;
+}
+.formBox {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 80%;
+  margin-bottom: 15px;
+}
+.formGroup {
+  display: grid;
+  grid-template-rows: 50% 50%;
+}
+.formGroup label {
+  align-self: flex-start;
+  justify-self: left;
+  font-size: 19px;
+}
+.inputInfo {
+  align-self: center;
+  justify-self: center;
+  width: 100%;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid #ccc;
+  height: 40px;
+  padding-left: 10px;
+  font-size: 17px;
+}
+.inputInfo:focus {
+  border: 1px solid blue;
+}
+.SubmitBtn {
+  border: none;
+  background-color: rgb(2, 129, 219);
+  color: white;
+  height: 40px;
+  border-radius: 5px;
+  font-size: 18px;
+  margin-top: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.SubmitBtn:hover {
+  transform: translate(0, -5px);
+}
+.signText {
+  display: flex;
+  flex-direction: row;
+}
+.signLink {
+  text-decoration: underline;
+  color: blue;
+}
+.separator {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+.line {
+  height: 0.8px;
+  width: 120px;
+  background-color: #ccc;
+}
+.separatorText {
+  font-size: 15px;
+}
+.GBtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  gap: 10px;
+  border-radius: 10px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.GImg {
+  width: 30px;
+  height: 30px;
+}
+.noneDisplay {
+  display: none;
+}

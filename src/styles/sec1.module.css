@@ -21,11 +21,7 @@
   grid-template-columns: repeat(4, 1fr);
   padding: 0 10px 0 10px;
 }
-.fashion,
-.electron,
-.homefurn,
-.BeautyTous,
-.more {
+.category {
   align-self: center;
   justify-self: center;
   width: 90%;
@@ -231,6 +227,9 @@
   align-self: end;
   padding-bottom: 5px;
   text-wrap: nowrap;
+}
+.sec2items::-webkit-scrollbar {
+  display: none;
 }
 .sec2items {
   display: flex;
