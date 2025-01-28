@@ -64,7 +64,7 @@
 }
 .topIcons:hover + .topIconDes .dropdownBox,
 .topIconDes:hover .dropdownBox {
-  display: block;
+  display: flex;
 }
 
 .topIconDes {

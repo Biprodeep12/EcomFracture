@@ -103,14 +103,52 @@
   font-size: 20px;
   background-color: rgb(232, 243, 253);
   height: 90%;
-  max-width: 170px;
   border-radius: 10px;
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   text-wrap: nowrap;
   cursor: pointer;
+  padding: 0 15px;
+  position: relative;
+}
+.userName {
+  gap: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.accImg {
+  width: 20px;
+  height: 20px;
+}
+.accDropdown {
+  position: absolute;
+  width: 160px;
+  background-color: white;
+  z-index: 5;
+  top: 40px;
+  border-radius: 10px;
+  box-shadow: 1px 5px 10px 1px rgba(0, 0, 0, 0.5);
+  display: none;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  padding: 20px;
+}
+.accLogOut {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.logoutImg {
+  width: 24px;
+  height: 24px;
+}
+.NavAcc:hover .accDropdown {
+  display: flex;
 }
 @media screen and (max-width: 1080px) {
   .nav {
