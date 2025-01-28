@@ -3,7 +3,7 @@
   height: 730px;
   display: flex;
   justify-content: center;
-  align-items: end;
+  align-items: flex-end;
 }
 .sec1 {
   width: 100%;
@@ -35,7 +35,7 @@
 .topIcons {
   width: 110px;
   height: 110px;
-  align-self: end;
+  align-self: flex-end;
   justify-self: center;
   cursor: pointer;
 }
@@ -224,7 +224,7 @@
 .sec2 h1 {
   justify-self: left;
   padding-left: 20px;
-  align-self: end;
+  align-self: flex-end;
   padding-bottom: 5px;
   text-wrap: nowrap;
 }
@@ -249,7 +249,7 @@
   justify-self: center;
 }
 .itemDes {
-  align-self: self-start;
+  align-self: flex-start;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -493,7 +493,7 @@
   .sec2 h1 {
     justify-self: center;
     padding-left: 0;
-    align-self: end;
+    align-self: flex-end;
     padding-bottom: 5px;
     text-wrap: nowrap;
     font-size: 22px;

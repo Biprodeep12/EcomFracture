@@ -1,5 +1,5 @@
 import styles from '@/styles/sec1.module.css';
-import React, { use, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import lap1 from '@/images/laptopImg.webp';
 import lap2 from '@/images/rogLap.webp';

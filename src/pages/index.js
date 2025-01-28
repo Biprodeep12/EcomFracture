@@ -4,7 +4,6 @@ import Sect from './components/sec1';
 import About from './components/about';
 import Login from './components/auth/login';
 import { useState } from 'react';
-import Regis from './components/auth/register';
 
 export default function Home() {
   const [displaySign, setDisplaySign] = useState(true);
