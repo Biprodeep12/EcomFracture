@@ -21,7 +21,11 @@ export default function Nav({ setDisplaySign }) {
   }, []);
 
   const LogAuthClick = () => {
-    setDisplaySign(false);
+    if (user) {
+      setDisplaySign(true);
+    } else {
+      setDisplaySign(false);
+    }
   };
 
   const OutAuthClick = () => {
