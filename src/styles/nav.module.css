@@ -135,6 +135,7 @@
   justify-content: start;
   align-items: center;
   padding: 20px;
+  gap: 20px;
 }
 .accLogOut {
   display: flex;
@@ -149,6 +150,8 @@
 }
 .NavAcc:hover .accDropdown {
   display: flex;
+}
+.mobileWish {
 }
 @media screen and (max-width: 1080px) {
   .nav {

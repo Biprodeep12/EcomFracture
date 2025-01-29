@@ -6,12 +6,15 @@ import search from '@/images/search.svg';
 import home from '@/images/home.svg';
 import prof from '@/images/profile.svg';
 import exit from '@/images/exit-logout.svg';
+import Link from 'next/link';
 import { auth } from '@/firebase/firebase';
 import { useEffect, useState } from 'react';
 import { signOut } from 'firebase/auth';
+import heartRed from '@/images/heartRed.svg';
 
 export default function Nav({ setDisplaySign }) {
   const [user, setUser] = useState(null);
+  const [hoverWish, sethoverWish] = useState(false);
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
@@ -35,21 +38,31 @@ export default function Nav({ setDisplaySign }) {
   return (
     <>
       <nav className={styles.nav}>
-        <div className={styles.NavLogo}>Wooper</div>
+        <Link href='/' className={styles.NavLogo}>
+          Wooper
+        </Link>
         <div className={styles.searchbox}>
           <Image src={search} alt='srch' className={styles.SRCH} />
           <input
             className={styles.NavInput}
             placeholder='Search from Products, Brands and More'></input>
         </div>
-        <div className={styles.NavCart}>
+        <Link href='/cartPage' className={styles.NavCart}>
           <Image src={cart} alt='cart' className={styles.cart} />
           <p className={styles.textCartWish}>Cart</p>
-        </div>
-        <div className={styles.NavWish}>
-          <Image src={heart} alt='wish' className={styles.heart} />
+        </Link>
+        <Link
+          href='/wishlist'
+          onMouseEnter={() => sethoverWish(true)}
+          onMouseLeave={() => sethoverWish(false)}
+          className={styles.NavWish}>
+          <Image
+            src={hoverWish ? heartRed : heart}
+            alt='wish'
+            className={styles.heart}
+          />
           <p className={styles.textCartWish}>Wishlist</p>
-        </div>
+        </Link>
         <div onClick={LogAuthClick} className={styles.NavAcc}>
           {user ? (
             <span className={styles.userName}>
@@ -60,6 +73,9 @@ export default function Nav({ setDisplaySign }) {
                   Logout
                   <Image src={exit} alt='logout' className={styles.logoutImg} />
                 </div>
+                <Link href='/wishlist' className={styles.mobileWish}>
+                  Wishlist
+                </Link>
               </div>
             </span>
           ) : (
@@ -68,18 +84,18 @@ export default function Nav({ setDisplaySign }) {
         </div>
       </nav>
       <div className={styles.mobileRes}>
-        <div className={styles.mobileHome}>
+        <Link href='/' className={styles.mobileHome}>
           <Image src={home} className={styles.hme} alt='home' />
           Home
-        </div>
+        </Link>
         <div className={styles.mobileSrch}>
           <Image src={search} alt='srch' className={styles.SRCH} />
           Search
         </div>
-        <div className={styles.mobileCart}>
+        <Link href='/cartPage' className={styles.mobileCart}>
           <Image src={cart} alt='cart' className={styles.cart} />
           Cart
-        </div>
+        </Link>
       </div>
     </>
   );

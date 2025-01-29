@@ -25,6 +25,8 @@ export default function Sect() {
   const [hovered3, setHovered3] = useState(false);
   const [hovered4, setHovered4] = useState(false);
 
+  const [wishes, setWishes] = useState({});
+
   const handlePrevious = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? images.length - 1 : prevIndex - 1,
@@ -316,8 +318,19 @@ export default function Sect() {
               <div className={styles.tp1INx}>
                 <Image src={lapsvg} alt='lapsvg' className={styles.lapsvg} />
                 <div className={styles.likeshareCont}>
-                  <div className={styles.likeshare}>
-                    <Image src={heart} alt='like' className={styles.likeTP} />
+                  <div
+                    onClick={() =>
+                      setWishes((prev) => ({
+                        ...prev,
+                        [index]: !prev[index],
+                      }))
+                    }
+                    className={styles.likeshare}>
+                    <Image
+                      src={wishes[index] ? heartRed : heart}
+                      alt='like'
+                      className={styles.likeTP}
+                    />
                   </div>
                   <div className={styles.likeshare}>
                     <Image src={share} alt='share' className={styles.shareTP} />

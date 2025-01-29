@@ -1,0 +1,38 @@
+.cartCont {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.cart {
+  margin-top: 75px;
+  width: 100%;
+  min-height: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.nothingCart {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 550px;
+  height: 400px;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  gap: 25px;
+}
+.empbox {
+  width: 100px;
+  height: 100px;
+}
+.shopBtn {
+  background-color: rgb(232, 243, 253);
+  font-weight: 600;
+  padding: 10px;
+  border-radius: 10px;
+}
