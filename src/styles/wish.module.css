@@ -11,6 +11,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 100px;
 }
 .nothingWish {
   margin-top: 20px;
@@ -35,4 +36,46 @@
   font-weight: 600;
   padding: 10px;
   border-radius: 10px;
+}
+.wishItem {
+  background-color: white;
+  max-width: 800px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 90% 10%;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 0 10px 10px 10px;
+}
+.wishDetails {
+  align-self: center;
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.itemTitle,
+.itemPrice {
+  font-weight: 600;
+}
+.itemPrice {
+  display: flex;
+  flex-direction: row;
+}
+.itemPrice p {
+  color: green;
+}
+.removeBtn {
+  align-self: center;
+  justify-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+}
+.bin {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
 }

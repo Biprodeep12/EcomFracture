@@ -144,3 +144,6 @@
 .noneDisplay {
   display: none;
 }
+.error {
+  color: red;
+}

@@ -16,6 +16,8 @@ import dpblu from '@/images/dropdownblue.svg';
 import heart from '@/images/heart.svg';
 import share from '@/images/share.svg';
 import heartRed from '@/images/heartRed.svg';
+import { db, auth } from '@/firebase/firebase';
+import { doc, getDoc, updateDoc, arrayUnion } from 'firebase/firestore';
 
 export default function Sect() {
   const images = [lap1, lap2, lap3];
@@ -37,12 +39,82 @@ export default function Sect() {
       prevIndex === images.length - 1 ? 0 : prevIndex + 1,
     );
   };
+
   useEffect(() => {
     const timer = setInterval(() => {
       handleNext();
     }, 5000);
     return () => clearInterval(timer);
   });
+
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged(async (currentUser) => {
+      setUser(currentUser);
+
+      if (currentUser) {
+        const userRef = doc(db, 'users', currentUser.uid);
+        const userDoc = await getDoc(userRef);
+
+        if (userDoc.exists()) {
+          const storedWishlist = userDoc.data().wishlist || [];
+          const newWishes = {};
+
+          // Mark items as liked if they exist in Firestore
+          storedWishlist.forEach((item) => {
+            newWishes[item] = true;
+          });
+
+          setWishes(newWishes);
+        }
+      } else {
+        setWishes({}); // Clear likes on logout
+      }
+    });
+
+    return () => unsubscribe();
+  }, []);
+
+  const handleLike = async (title, price) => {
+    if (!user) {
+      alert('Please log in to save items to your wishlist.');
+      return;
+    }
+
+    if (!title || price === undefined) {
+      console.error('Invalid item: missing title or price');
+      return;
+    }
+
+    const userRef = doc(db, 'users', user.uid);
+    const userDoc = await getDoc(userRef);
+
+    try {
+      const item = { title, price }; // Ensure price is included
+
+      if (wishes[title]) {
+        // Remove item from Firestore
+        const updatedWishlist = userDoc
+          .data()
+          ?.wishlist.filter((wishItem) => wishItem.title !== title);
+        await updateDoc(userRef, { wishlist: updatedWishlist });
+      } else {
+        // Add item if it doesn't already exist
+        await updateDoc(userRef, {
+          wishlist: arrayUnion(item),
+        });
+      }
+
+      // Toggle like state
+      setWishes((prev) => ({
+        ...prev,
+        [title]: !prev[title],
+      }));
+    } catch (err) {
+      console.error('Error updating wishlist:', err);
+    }
+  };
 
   return (
     <>
@@ -295,23 +367,28 @@ export default function Sect() {
           {[
             {
               title:
-                'GIGABYTE Intel Core i7 12th Gen 12650H - (16 GB/512 GB SSD/Windows 11 Home/6 GB Graphics/NVIDIA GeForce RTX 4050) G5 MF-G2IN313SH Gaming Laptop (15 inch, Black, 2.08 Kg)',
+                'GIGABYTE Intel Core i7 12th Gen 12650H - (16 GB/512 GB SSD/Windows 11 Home/6 GB Graphics/NVIDIA GeForce RTX 4050) G5 MF-G2IN313SH Gaming Laptop (15 inch, Black, 2.09 Kg)',
+              price: '9000',
             },
             {
               title:
                 'HP AMD Athlon Dual Core - (8 GB/256 GB SSD/Windows 11 Home) 255 Laptop (15.6 inch, Black)',
+              price: '4000',
             },
             {
               title:
                 'GIGABYTE Intel Core i7 12th Gen 12650H - (16 GB/512 GB SSD/Windows 11 Home/6 GB Graphics/NVIDIA GeForce RTX 4050) G5 MF-G2IN313SH Gaming Laptop (15 inch, Black, 2.08 Kg)',
+              price: '2500',
             },
             {
               title:
-                'HP AMD Athlon Dual Core - (8 GB/256 GB SSD/Windows 11 Home) 255 Laptop (15.6 inch, Black)',
+                'HP AMD Athlon Dual Core - (8 GB/256 GB SSD/Windows 11 Home) 255 Laptop (15.6 inch, grey)',
+              price: '90000',
             },
             {
               title:
-                'GIGABYTE Intel Core i7 12th Gen 12650H - (16 GB/512 GB SSD/Windows 11 Home/6 GB Graphics/NVIDIA GeForce RTX 4050) G5 MF-G2IN313SH Gaming Laptop (15 inch, Black, 2.08 Kg)',
+                'GIGABYTE Intel Core i7 12th Gen 12650H - (16 GB/512 GB SSD/Windows 11 Home/6 GB Graphics/NVIDIA GeForce RTX 4050) G5 MF-G2IN313SH Gaming Laptop (15 inch, Black, 2.1 Kg)',
+              price: '7000',
             },
           ].map((laptop, index) => (
             <div key={index} className={styles.tp1IN}>
@@ -319,15 +396,10 @@ export default function Sect() {
                 <Image src={lapsvg} alt='lapsvg' className={styles.lapsvg} />
                 <div className={styles.likeshareCont}>
                   <div
-                    onClick={() =>
-                      setWishes((prev) => ({
-                        ...prev,
-                        [index]: !prev[index],
-                      }))
-                    }
+                    onClick={() => handleLike(laptop.title, laptop.price)}
                     className={styles.likeshare}>
                     <Image
-                      src={wishes[index] ? heartRed : heart}
+                      src={wishes[laptop.title] ? heartRed : heart}
                       alt='like'
                       className={styles.likeTP}
                     />
@@ -346,31 +418,42 @@ export default function Sect() {
           {[
             {
               title:
-                'HP AMD Athlon Dual Core - (8 GB/256 GB SSD/Windows 11 Home) 255 Laptop (15.6 inch, Black)',
+                'HP AMD Athlon Dual Core - (78 GB/256 GB SSD/Windows 11 Home) 255 Laptop (15.6 inch, Black)',
+              price: '320000',
+            },
+            {
+              title:
+                'HP AMD Athlon Dual Core - (2 GB/256 GB SSD/Windows 11 Home) 255 Laptop (15.6 inch, Black)',
+              price: '90000',
+            },
+            {
+              title:
+                'HP AMD Athlon Dual Core - (68 GB/256 GB SSD/Windows 11 Home) 255 Laptop (15.6 inch, Black)',
+              price: '78000',
             },
             {
               title:
                 'HP AMD Athlon Dual Core - (8 GB/256 GB SSD/Windows 11 Home) 255 Laptop (15.6 inch, Black)',
+              price: '329000',
             },
             {
               title:
-                'HP AMD Athlon Dual Core - (8 GB/256 GB SSD/Windows 11 Home) 255 Laptop (15.6 inch, Black)',
-            },
-            {
-              title:
-                'HP AMD Athlon Dual Core - (8 GB/256 GB SSD/Windows 11 Home) 255 Laptop (15.6 inch, Black)',
-            },
-            {
-              title:
-                'GIGABYTE Intel Core i7 12th Gen 12650H - (16 GB/512 GB SSD/Windows 11 Home/6 GB Graphics/NVIDIA GeForce RTX 4050) G5 MF-G2IN313SH Gaming Laptop (15 inch, Black, 2.08 Kg)',
+                'GIGABYTE Intel Core i7 69th Gen 12650H - (16 GB/512 GB SSD/Windows 11 Home/6 GB Graphics/NVIDIA GeForce RTX 4050) G5 MF-G2IN313SH Gaming Laptop (15 inch, Black, 2.08 Kg)',
+              price: '62000',
             },
           ].map((laptop, index) => (
             <div key={index} className={styles.tp1IN}>
               <div className={styles.tp1INx}>
                 <Image src={lapsvg} alt='lapsvg' className={styles.lapsvg} />
                 <div className={styles.likeshareCont}>
-                  <div className={styles.likeshare}>
-                    <Image src={heart} alt='like' className={styles.likeTP} />
+                  <div
+                    onClick={() => handleLike(laptop.title, laptop.price)}
+                    className={styles.likeshare}>
+                    <Image
+                      src={wishes[laptop.title] ? heartRed : heart}
+                      alt='like'
+                      className={styles.likeTP}
+                    />
                   </div>
                   <div className={styles.likeshare}>
                     <Image src={share} alt='share' className={styles.shareTP} />

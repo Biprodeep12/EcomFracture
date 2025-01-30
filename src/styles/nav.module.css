@@ -124,7 +124,7 @@
 }
 .accDropdown {
   position: absolute;
-  width: 160px;
+  width: 140px;
   background-color: white;
   z-index: 5;
   top: 40px;
@@ -132,17 +132,6 @@
   box-shadow: 1px 5px 10px 1px rgba(0, 0, 0, 0.5);
   display: none;
   flex-direction: column;
-  justify-content: start;
-  align-items: center;
-  padding: 20px;
-  gap: 20px;
-}
-.accLogOut {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
 }
 .logoutImg {
   width: 24px;
@@ -151,7 +140,24 @@
 .NavAcc:hover .accDropdown {
   display: flex;
 }
-.mobileWish {
+.mobileWish,
+.accLogOut {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  padding: 15px 0 15px 10px;
+  gap: 5px;
+  width: 100%;
+}
+.accwish {
+  width: 24px;
+  height: 24px;
+}
+.seperatorline {
+  width: 100%;
+  height: 1px;
+  background-color: #ccc;
 }
 @media screen and (max-width: 1080px) {
   .nav {

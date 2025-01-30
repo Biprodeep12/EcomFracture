@@ -10,6 +10,7 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
 } from 'firebase/auth';
+import { doc, getDoc } from 'firebase/firestore';
 
 export default function Login({ displaySign, setDisplaySign }) {
   const [isLoginBox, setIsLoginBox] = useState(true);
@@ -26,7 +27,22 @@ export default function Login({ displaySign, setDisplaySign }) {
     const password = formData.get('password');
 
     try {
-      await signInWithEmailAndPassword(auth, email, password);
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password,
+      );
+      const user = userCredential.user;
+
+      const userRef = doc(db, 'users', user.uid);
+      const userDoc = await getDoc(userRef);
+
+      if (userDoc.exists()) {
+        setWishlist(userDoc.data().wishlist || []);
+      } else {
+        setWishlist([]);
+      }
+
       setDisplaySign(true);
     } catch (err) {
       setError(err.message);

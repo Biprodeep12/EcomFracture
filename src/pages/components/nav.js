@@ -35,6 +35,20 @@ export default function Nav({ setDisplaySign }) {
     signOut(auth);
   };
 
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth < 500);
+    };
+
+    checkScreenSize(); // Check initially
+
+    window.addEventListener('resize', checkScreenSize); // Listen for window resize
+
+    return () => window.removeEventListener('resize', checkScreenSize); // Cleanup
+  }, []);
+
   return (
     <>
       <nav className={styles.nav}>
@@ -70,12 +84,22 @@ export default function Nav({ setDisplaySign }) {
               <Image src={prof} className={styles.accImg} alt='dropdown' />
               <div className={styles.accDropdown}>
                 <div onClick={OutAuthClick} className={styles.accLogOut}>
-                  Logout
                   <Image src={exit} alt='logout' className={styles.logoutImg} />
+                  Logout
                 </div>
-                <Link href='/wishlist' className={styles.mobileWish}>
-                  Wishlist
-                </Link>
+                {isMobile && (
+                  <>
+                    <div className={styles.seperatorline}></div>
+                    <Link href='/wishlist' className={styles.mobileWish}>
+                      <Image
+                        src={heart}
+                        alt='wish'
+                        className={styles.accwish}
+                      />
+                      Wishlist
+                    </Link>
+                  </>
+                )}
               </div>
             </span>
           ) : (

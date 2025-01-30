@@ -5,12 +5,13 @@ import Wish from './components/wish';
 
 export default function CartPage() {
   const [displaySign, setDisplaySign] = useState(true);
+  const [wishlistItems, setWishlistItems] = useState([]);
 
   return (
     <>
       <Login displaySign={displaySign} setDisplaySign={setDisplaySign} />
       <Nav setDisplaySign={setDisplaySign} />
-      <Wish />
+      <Wish wishlistItems={wishlistItems} setWishlistItems={setWishlistItems} />
     </>
   );
 }
