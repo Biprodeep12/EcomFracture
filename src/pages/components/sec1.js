@@ -1,5 +1,5 @@
 import styles from '@/styles/sec1.module.css';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import Image from 'next/image';
 import lap1 from '@/images/laptopImg.webp';
 import lap2 from '@/images/rogLap.webp';
@@ -116,6 +116,14 @@ export default function Sect() {
     }
   };
 
+  const scrollContainerRef = useRef(null);
+
+  const scrollRight = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollLeft += 200;
+    }
+  };
+
   return (
     <>
       <section className={styles.sec1Cont}>
@@ -220,7 +228,7 @@ export default function Sect() {
       <section className={styles.sec2Cont}>
         <div className={styles.sec2}>
           <h1>Top Deals on TVs & Appliances</h1>
-          <div className={styles.sec2items}>
+          <div ref={scrollContainerRef} className={styles.sec2items}>
             {[
               { title: 'Godrej Refrigerator', price: 'From ₹7,240' },
               { title: 'Godrej Refrigerator', price: 'From ₹7,240' },
@@ -239,6 +247,9 @@ export default function Sect() {
             ))}
           </div>
         </div>
+        <button onClick={scrollRight} className={styles.rowItemsNext}>
+          <Image src={next} className={styles.rowNext} alt='next' />
+        </button>
       </section>
       <section className={styles.threeColumnCont}>
         {[
@@ -339,7 +350,7 @@ export default function Sect() {
       <section className={styles.sec2Cont}>
         <div className={styles.sec2}>
           <h1>Furniture Deals</h1>
-          <div className={styles.sec2items}>
+          <div ref={scrollContainerRef} className={styles.sec2items}>
             {[
               { title: 'Godrej Refrigerator', price: 'From ₹7,240' },
               { title: 'Godrej Refrigerator', price: 'From ₹7,240' },
@@ -358,6 +369,9 @@ export default function Sect() {
             ))}
           </div>
         </div>
+        <button onClick={scrollRight} className={styles.rowItemsNext}>
+          <Image src={next} className={styles.rowNext} alt='next' />
+        </button>
       </section>
       <div className={styles.trendCont}>
         <div className={styles.trend}>Trending</div>
@@ -469,31 +483,42 @@ export default function Sect() {
           {[
             {
               title:
-                'GIGABYTE Intel Core i7 12th Gen 12650H - (16 GB/512 GB SSD/Windows 11 Home/6 GB Graphics/NVIDIA GeForce RTX 4050) G5 MF-G2IN313SH Gaming Laptop (15 inch, Black, 2.08 Kg)',
+                'GIGABYTE Intel Core i7 12th Gen 12650H - (16 GB/512 GB SSD/Windows 11 Home/6 GB Graphics/NVIDIA GeForce RTX 4050) G5 MF-G2IN313SH Gaming Laptop (85 inch, Black, 2.08 Kg)',
+              price: '12300',
             },
             {
               title:
-                'HP AMD Athlon Dual Core - (8 GB/256 GB SSD/Windows 11 Home) 255 Laptop (15.6 inch, Black)',
+                'HP AMD Athlon Dual Core - (8 GB/512 GB SSD/Windows 11 Home) 255 Laptop (15.6 inch, Black)',
+              price: '19300',
             },
             {
               title:
-                'GIGABYTE Intel Core i7 12th Gen 12650H - (16 GB/512 GB SSD/Windows 11 Home/6 GB Graphics/NVIDIA GeForce RTX 4050) G5 MF-G2IN313SH Gaming Laptop (15 inch, Black, 2.08 Kg)',
+                'GIGABYTE Intel Core i7 12th Gen 12650H - (69 GB/512 GB SSD/Windows 11 Home/6 GB Graphics/NVIDIA GeForce RTX 4050) G5 MF-G2IN313SH Gaming Laptop (15 inch, Black, 2.08 Kg)',
+              price: '62300',
             },
             {
               title:
-                'HP AMD Athlon Dual Core - (8 GB/256 GB SSD/Windows 11 Home) 255 Laptop (15.6 inch, Black)',
+                'HP AMD Athlon pentagon Core - (8 GB/256 GB SSD/Windows 11 Home) 255 Laptop (15.6 inch, Black)',
+              price: '69000',
             },
             {
               title:
-                'GIGABYTE Intel Core i7 12th Gen 12650H - (16 GB/512 GB SSD/Windows 11 Home/6 GB Graphics/NVIDIA GeForce RTX 4050) G5 MF-G2IN313SH Gaming Laptop (15 inch, Black, 2.08 Kg)',
+                'GIGABYTE Intel Core i12 12th Gen 12650H - (16 GB/512 GB SSD/Windows 11 Home/6 GB Graphics/NVIDIA GeForce RTX 4050) G5 MF-G2IN313SH Gaming Laptop (15 inch, Black, 2.08 Kg)',
+              price: '90000',
             },
           ].map((laptop, index) => (
             <div key={index} className={styles.tp1IN}>
               <div className={styles.tp1INx}>
                 <Image src={lapsvg} alt='lapsvg' className={styles.lapsvg} />
                 <div className={styles.likeshareCont}>
-                  <div className={styles.likeshare}>
-                    <Image src={heart} alt='like' className={styles.likeTP} />
+                  <div
+                    onClick={() => handleLike(laptop.title, laptop.price)}
+                    className={styles.likeshare}>
+                    <Image
+                      src={wishes[laptop.title] ? heartRed : heart}
+                      alt='like'
+                      className={styles.likeTP}
+                    />
                   </div>
                   <div className={styles.likeshare}>
                     <Image src={share} alt='share' className={styles.shareTP} />
@@ -508,7 +533,7 @@ export default function Sect() {
       <section className={styles.sec2Cont}>
         <div className={styles.sec2}>
           <h1>Recently Viewed</h1>
-          <div className={styles.sec2items}>
+          <div ref={scrollContainerRef} className={styles.sec2items}>
             {[
               { title: 'Godrej Refrigerator', price: 'From ₹7,240' },
               { title: 'Godrej Refrigerator', price: 'From ₹7,240' },
@@ -527,6 +552,9 @@ export default function Sect() {
             ))}
           </div>
         </div>
+        <button onClick={scrollRight} className={styles.rowItemsNext}>
+          <Image src={next} className={styles.rowNext} alt='next' />
+        </button>
       </section>
     </>
   );

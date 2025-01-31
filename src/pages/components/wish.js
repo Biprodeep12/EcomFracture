@@ -1,15 +1,15 @@
 import { useState, useEffect } from 'react';
 import { db, auth } from '@/firebase/firebase';
-import { doc, getDoc, updateDoc, arrayRemove } from 'firebase/firestore';
+import { doc, getDoc, updateDoc } from 'firebase/firestore';
 import Link from 'next/link';
 import Image from 'next/image';
 import wish from '@/images/wishlist.svg';
 import bin from '@/images/bin.svg';
 import styles from '@/styles/wish.module.css';
 
-export default function Wish() {
-  const [wishlist, setWishlist] = useState([]);
+export default function Wish({ wishlist, setWishlist }) {
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(async (currentUser) => {
@@ -23,6 +23,7 @@ export default function Wish() {
       } else {
         setWishlist([]);
       }
+      setLoading(false);
     });
 
     return () => unsubscribe();
@@ -44,6 +45,10 @@ export default function Wish() {
       setWishlist(updatedWishlist);
     }
   };
+
+  if (loading) {
+    return <div className={styles.loading}>Loading...</div>;
+  }
 
   return (
     <div className={styles.wishCont}>

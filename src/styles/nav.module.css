@@ -97,6 +97,16 @@
 }
 .NavWish {
   justify-self: center;
+  position: relative;
+}
+.wishlenght {
+  position: absolute;
+  background-color: orange;
+  min-width: 20px;
+  height: 20px;
+  right: -15px;
+  top: -15px;
+  border-radius: 50px;
 }
 .NavAcc {
   justify-self: center;

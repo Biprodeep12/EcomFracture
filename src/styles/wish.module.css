@@ -79,3 +79,10 @@
   height: 30px;
   cursor: pointer;
 }
+.loading {
+  position: absolute;
+  left: 50%;
+  translate: 0, -50%;
+  top: 200px;
+  font-size: 30px;
+}

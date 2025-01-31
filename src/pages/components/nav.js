@@ -12,7 +12,7 @@ import { useEffect, useState } from 'react';
 import { signOut } from 'firebase/auth';
 import heartRed from '@/images/heartRed.svg';
 
-export default function Nav({ setDisplaySign }) {
+export default function Nav({ setDisplaySign, wishlist }) {
   const [user, setUser] = useState(null);
   const [hoverWish, sethoverWish] = useState(false);
 
@@ -42,11 +42,11 @@ export default function Nav({ setDisplaySign }) {
       setIsMobile(window.innerWidth < 500);
     };
 
-    checkScreenSize(); // Check initially
+    checkScreenSize();
 
-    window.addEventListener('resize', checkScreenSize); // Listen for window resize
+    window.addEventListener('resize', checkScreenSize);
 
-    return () => window.removeEventListener('resize', checkScreenSize); // Cleanup
+    return () => window.removeEventListener('resize', checkScreenSize);
   }, []);
 
   return (
@@ -66,7 +66,7 @@ export default function Nav({ setDisplaySign }) {
           <p className={styles.textCartWish}>Cart</p>
         </Link>
         <Link
-          href='/wishlist'
+          href='/wishlistPage'
           onMouseEnter={() => sethoverWish(true)}
           onMouseLeave={() => sethoverWish(false)}
           className={styles.NavWish}>
@@ -75,6 +75,7 @@ export default function Nav({ setDisplaySign }) {
             alt='wish'
             className={styles.heart}
           />
+          <div className={styles.wishlenght}>{wishlist.lenght}</div>
           <p className={styles.textCartWish}>Wishlist</p>
         </Link>
         <div onClick={LogAuthClick} className={styles.NavAcc}>
