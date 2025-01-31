@@ -75,7 +75,7 @@ export default function Nav({ setDisplaySign, wishlist }) {
             alt='wish'
             className={styles.heart}
           />
-          <div className={styles.wishlength}>{wishlist.lenght}</div>
+          <div className={styles.wishlength}>{wishlist.length}</div>
           <p className={styles.textCartWish}>Wishlist</p>
         </Link>
         <div onClick={LogAuthClick} className={styles.NavAcc}>
