@@ -86,7 +86,7 @@ export default function Nav({ setDisplaySign }) {
           <p className={styles.textCartWish}>Cart</p>
         </Link>
         <Link
-          href='/wishlistPage'
+          href='/wishPage'
           onMouseEnter={() => sethoverWish(true)}
           onMouseLeave={() => sethoverWish(false)}
           className={styles.NavWish}>
@@ -111,7 +111,7 @@ export default function Nav({ setDisplaySign }) {
                 {isMobile && (
                   <>
                     <div className={styles.seperatorline}></div>
-                    <Link href='/wishlist' className={styles.mobileWish}>
+                    <Link href='/wishPage' className={styles.mobileWish}>
                       <Image
                         src={heart}
                         alt='wish'
