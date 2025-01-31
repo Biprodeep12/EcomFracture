@@ -7,12 +7,13 @@ import home from '@/images/home.svg';
 import prof from '@/images/profile.svg';
 import exit from '@/images/exit-logout.svg';
 import Link from 'next/link';
-import { auth } from '@/firebase/firebase';
+import { doc, getDoc } from 'firebase/firestore';
+import { auth, db } from '@/firebase/firebase';
 import { useEffect, useState } from 'react';
 import { signOut } from 'firebase/auth';
 import heartRed from '@/images/heartRed.svg';
 
-export default function Nav({ setDisplaySign, wishlist }) {
+export default function Nav({ setDisplaySign }) {
   const [user, setUser] = useState(null);
   const [hoverWish, sethoverWish] = useState(false);
 
@@ -47,6 +48,25 @@ export default function Nav({ setDisplaySign, wishlist }) {
     window.addEventListener('resize', checkScreenSize);
 
     return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
+
+  const [wishlist, setWishlist] = useState([]);
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged(async (currentUser) => {
+      setUser(currentUser);
+      if (currentUser) {
+        const userRef = doc(db, 'users', currentUser.uid);
+        const userDoc = await getDoc(userRef);
+        if (userDoc.exists()) {
+          setWishlist(userDoc.data().wishlist || []);
+        }
+      } else {
+        setWishlist([]);
+      }
+    });
+
+    return () => unsubscribe();
   }, []);
 
   return (
@@ -97,6 +117,9 @@ export default function Nav({ setDisplaySign, wishlist }) {
                         alt='wish'
                         className={styles.accwish}
                       />
+                      <div className={styles.mobilwishlength}>
+                        {wishlist.length}
+                      </div>
                       Wishlist
                     </Link>
                   </>

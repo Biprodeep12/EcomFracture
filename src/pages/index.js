@@ -7,12 +7,11 @@ import { useState } from 'react';
 
 export default function Home() {
   const [displaySign, setDisplaySign] = useState(true);
-  const [wishlist, setWishlist] = useState([]);
 
   return (
     <>
       <Login displaySign={displaySign} setDisplaySign={setDisplaySign} />
-      <Nav setDisplaySign={setDisplaySign} wishlist={wishlist} />
+      <Nav setDisplaySign={setDisplaySign} />
       <Sect />
       <About />
     </>

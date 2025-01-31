@@ -7,9 +7,10 @@ import wish from '@/images/wishlist.svg';
 import bin from '@/images/bin.svg';
 import styles from '@/styles/wish.module.css';
 
-export default function Wish({ wishlist, setWishlist }) {
+export default function Wish() {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [wishlist, setWishlist] = useState([]);
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(async (currentUser) => {
