@@ -1,7 +1,7 @@
 import styles from '@/styles/search.module.css';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import { items } from './items';
+import { items } from '@/data/items';
 
 export default function Search({ searchQuery }) {
   const router = useRouter();
