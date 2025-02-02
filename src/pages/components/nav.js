@@ -79,7 +79,8 @@ export default function Nav({ setDisplaySign }) {
           <Image src={search} alt='srch' className={styles.SRCH} />
           <input
             className={styles.NavInput}
-            placeholder='Search from Products, Brands and More'></input>
+            placeholder='Search from Products, Brands and More'
+          />
         </div>
         <Link href='/cartPage' className={styles.NavCart}>
           <Image src={cart} alt='cart' className={styles.cart} />
@@ -95,7 +96,9 @@ export default function Nav({ setDisplaySign }) {
             alt='wish'
             className={styles.heart}
           />
-          <div className={styles.wishlength}>{wishlist.length}</div>
+          {wishlist.length > 0 && (
+            <div className={styles.wishlength}>{wishlist.length}</div>
+          )}
           <p className={styles.textCartWish}>Wishlist</p>
         </Link>
         <div onClick={LogAuthClick} className={styles.NavAcc}>

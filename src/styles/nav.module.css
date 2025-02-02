@@ -103,13 +103,31 @@
   position: absolute;
   background-color: orange;
   min-width: 20px;
-  right: -20px;
-  top: -15px;
+  top: 0;
+  right: 0;
+  transform: translate(80%, -70%);
   border-radius: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1px 2px;
+  width: 25px;
+  height: 25px;
+  overflow: hidden;
+  animation: wishIntro 1s ease forwards;
+}
+@keyframes wishIntro {
+  0% {
+    width: 0;
+    height: 0;
+  }
+  50% {
+    width: 30px;
+    height: 30px;
+  }
+  100% {
+    width: 25px;
+    height: 25px;
+  }
 }
 .mobilwishlength {
   position: absolute;
