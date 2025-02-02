@@ -12,10 +12,20 @@ import { auth, db } from '@/firebase/firebase';
 import { useEffect, useState } from 'react';
 import { signOut } from 'firebase/auth';
 import heartRed from '@/images/heartRed.svg';
+import { useRouter } from 'next/router';
 
 export default function Nav({ setDisplaySign }) {
   const [user, setUser] = useState(null);
   const [hoverWish, sethoverWish] = useState(false);
+  const [query, setQuery] = useState('');
+
+  const router = useRouter();
+
+  const handleSearch = (e) => {
+    if (e.key === 'Enter' && query.trim() !== '') {
+      router.push(`/searchPage?query=${encodeURIComponent(query)}`);
+    }
+  };
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
@@ -80,6 +90,9 @@ export default function Nav({ setDisplaySign }) {
           <input
             className={styles.NavInput}
             placeholder='Search from Products, Brands and More'
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            onKeyDown={handleSearch}
           />
         </div>
         <Link href='/cartPage' className={styles.NavCart}>
@@ -139,10 +152,10 @@ export default function Nav({ setDisplaySign }) {
           <Image src={home} className={styles.hme} alt='home' />
           Home
         </Link>
-        <div className={styles.mobileSrch}>
+        <Link href='/mobSearchPage' className={styles.mobileSrch}>
           <Image src={search} alt='srch' className={styles.SRCH} />
           Search
-        </div>
+        </Link>
         <Link href='/cartPage' className={styles.mobileCart}>
           <Image src={cart} alt='cart' className={styles.cart} />
           Cart

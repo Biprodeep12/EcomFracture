@@ -1,0 +1,14 @@
+.mobCont {
+  width: 100%;
+  padding-top: 75px;
+}
+.mobInnerCont {
+  width: 100%;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  gap: 10px;
+  margin-bottom: 100px;
+  background-color: white;
+}

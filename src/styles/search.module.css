@@ -1,0 +1,137 @@
+.searchCont {
+  width: 100%;
+  padding-top: 75px;
+}
+.searchInnerCont {
+  width: 100%;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+  margin-bottom: 100px;
+}
+.searchedItems {
+  height: 250px;
+  max-width: 950px;
+  width: 100%;
+  border-radius: 10px;
+  background-color: white;
+  display: grid;
+  grid-template-columns: 25% 55% 20%;
+}
+.searchedItems img {
+  align-self: center;
+  justify-self: center;
+}
+.productDetails {
+  justify-self: left;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.productName {
+  font-weight: 600;
+  margin-top: 25px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.featureList {
+  margin-left: 15px;
+  display: flex;
+  flex-direction: column;
+}
+.dotst {
+  font-weight: 600;
+}
+.featureItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+.productPrice {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  gap: 5px;
+}
+.pt1 {
+  font-size: 27px;
+  font-weight: 600;
+}
+.pt2 {
+  text-decoration: line-through;
+  color: #b5b5b5;
+}
+.pt3 {
+  color: green;
+  font-size: 17px;
+  font-weight: 600;
+}
+@media screen and (max-width: 1000px) {
+  .searchedItems {
+    grid-template-columns: 35% 45% 20%;
+  }
+  .searchedItems img {
+    width: 160px;
+    height: 160px;
+  }
+}
+@media screen and (max-width: 610px) {
+  .searchedItems img {
+    width: 120px;
+    height: 120px;
+    grid-row: 1;
+    align-self: flex-end;
+  }
+  .productName {
+    grid-row: 1;
+  }
+  .productPrice {
+    grid-column: span 2;
+    grid-row: 2;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 30px;
+    margin-left: 30px;
+  }
+  .searchedItems {
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 70% auto;
+  }
+  .dotst {
+    display: none;
+  }
+  .featureItem p {
+    font-size: 10px;
+    border: 1px solid #ccc;
+    height: 20px;
+    text-wrap: nowrap;
+
+    padding: 0 5px;
+    display: flex;
+    align-items: center;
+  }
+  .searchedItems {
+    height: 200px;
+  }
+  .featureList {
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 60px;
+    width: 100%;
+    max-width: 250px;
+    overflow: hidden;
+  }
+}
+@media screen and (max-width: 460px) {
+  .featureList {
+    max-width: 180px;
+  }
+}

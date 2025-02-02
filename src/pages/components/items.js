@@ -1,0 +1,77 @@
+import lapsvg from '@/images/lapsvg.webp';
+
+export const items = [
+  {
+    img: lapsvg,
+    item: 'ASUS ROG Strix G15 (Ryzen 7 6800H/16GB RAM/1TB SSD/NVIDIA RTX 3060/Windows 11)',
+    price: '40,000',
+    features: [
+      'AMD Ryzen 7 Octa Core Processor',
+      '16 GB DDR5 RAM',
+      'Windows 11 Home Operating System',
+      '1 TB SSD',
+      '39.62 cm (15.6 inch) Display',
+      '1 Year Carry-in Warranty',
+    ],
+    orgPrice: '1,00,000',
+    disPercent: '40',
+  },
+  {
+    img: lapsvg,
+    item: 'Acer Nitro 5 Intel Core i5 11th Gen (16GB RAM/512GB SSD/NVIDIA GTX 1650/Windows 11)',
+    price: '58,000',
+    features: [
+      'Intel Core i5 11th Gen',
+      '16 GB DDR4 RAM',
+      'Windows 11 Home OS',
+      '512 GB SSD',
+      '15.6 inch Full HD IPS Display',
+      'Backlit Keyboard',
+    ],
+    orgPrice: '1,16,000',
+    disPercent: '50',
+  },
+  {
+    img: lapsvg,
+    item: 'MSI Katana GF66 Intel Core i7 12th Gen (16GB RAM/512GB SSD/NVIDIA RTX 3050/Windows 11)',
+    price: '80,000',
+    features: [
+      'Intel Core i7 12th Gen',
+      '16 GB DDR4 RAM',
+      '512 GB SSD',
+      '144Hz Refresh Rate',
+      'Dedicated NVIDIA RTX 3050 GPU',
+    ],
+    orgPrice: '1,60,000',
+    disPercent: '50',
+  },
+  {
+    img: lapsvg,
+    item: 'HP Victus Ryzen 5 5600H (8GB RAM/512GB SSD/NVIDIA GTX 1650/Windows 11)',
+    price: '42,000',
+    features: [
+      'AMD Ryzen 5 5600H Processor',
+      '8 GB DDR4 RAM',
+      '512 GB SSD Storage',
+      'Windows 11 Home',
+      '144Hz Refresh Rate',
+      '4-Zone RGB Keyboard',
+    ],
+    orgPrice: '1,40,000',
+    disPercent: '30',
+  },
+  {
+    img: lapsvg,
+    item: 'Lenovo Legion 5 Intel Core i7 10th Gen (16GB RAM/1TB HDD + 256GB SSD/NVIDIA GTX 1660Ti/Windows 10)',
+    price: '50,000',
+    features: [
+      'Intel Core i7 10th Gen Processor',
+      '16 GB DDR4 RAM',
+      '1 TB HDD + 256 GB SSD',
+      'NVIDIA GTX 1660Ti GPU',
+      'Windows 10 OS',
+    ],
+    orgPrice: '1,00,000',
+    disPercent: '50',
+  },
+];

@@ -40,6 +40,53 @@
   position: fixed;
   padding: 10px 10px 10px 30px;
   z-index: 80;
+  border-bottom: 1px solid #ccc;
+}
+.navile {
+  background-color: white;
+  display: grid;
+  grid-template-columns: 10% 90%;
+  width: 100%;
+  height: 65px;
+  position: fixed;
+  padding: 10px 10px 10px 30px;
+  z-index: 80;
+  border-bottom: 1px solid #ccc;
+}
+.searchboxile {
+  height: 100%;
+  margin: 0 10px;
+}
+.NavInputile {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  border: none;
+  background-color: rgb(232, 243, 253);
+  font-size: 18px;
+  outline: none;
+  padding-left: 50px;
+  justify-self: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.SRCHile {
+  width: 24px;
+  position: absolute;
+  top: 50%;
+  margin-left: 10px;
+  translate: 0 -50%;
+  height: 24px;
+}
+.backSrchile {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+.backSrchile img {
+  width: 30px;
+  height: 30px;
 }
 .NavAcc,
 .NavCart,
