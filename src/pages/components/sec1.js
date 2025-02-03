@@ -230,18 +230,18 @@ export default function Sect() {
           <h1>Top Deals on TVs & Appliances</h1>
           <div ref={scrollContainerRef} className={styles.sec2items}>
             {[
-              { title: 'Godrej Refrigerator', price: 'From ₹7,240' },
-              { title: 'Godrej Refrigerator', price: 'From ₹7,240' },
-              { title: 'Godrej Refrigerator', price: 'From ₹7,240' },
-              { title: 'Godrej Refrigerator', price: 'From ₹7,240' },
-              { title: 'Godrej Refrigerator', price: 'From ₹7,240' },
-              { title: 'Godrej Refrigerator', price: 'From ₹7,240' },
+              { title: '4k Smart TVs', price: '₹23,499' },
+              { title: 'Hindware Smart Appliances', price: '₹11,499' },
+              { title: 'KENT Digital Air Fryer', price: '₹5,199' },
+              { title: 'NutriPro Blender', price: '₹1,599' },
+              { title: 'Aqua Fresh', price: ' ₹3,999' },
+              { title: 'LG Smart TVs', price: ' ₹13,990' },
             ].map((des, index) => (
               <div key={index} className={styles.rowItems}>
                 <Image src={lapsvg} alt='/' className={styles.imgitems} />
                 <div className={styles.itemDes}>
                   <p>{des.title}</p>
-                  <h4>{des.price}</h4>
+                  <h4>From {des.price}</h4>
                 </div>
               </div>
             ))}
@@ -352,12 +352,12 @@ export default function Sect() {
           <h1>Furniture Deals</h1>
           <div ref={scrollContainerRef} className={styles.sec2items}>
             {[
-              { title: 'Godrej Refrigerator', price: 'From ₹7,240' },
-              { title: 'Godrej Refrigerator', price: 'From ₹7,240' },
-              { title: 'Godrej Refrigerator', price: 'From ₹7,240' },
-              { title: 'Godrej Refrigerator', price: 'From ₹7,240' },
-              { title: 'Godrej Refrigerator', price: 'From ₹7,240' },
-              { title: 'Godrej Refrigerator', price: 'From ₹7,240' },
+              { title: 'Collapsible Wardrobe', price: 'From ₹800' },
+              { title: '4 Seater Dinning Table Set', price: 'From ₹4,500' },
+              { title: 'Office Chairs', price: 'From ₹5,000' },
+              { title: 'Wooden Queen Bed', price: 'From ₹11,000' },
+              { title: 'Collapsible Show Stand', price: 'From ₹1,800' },
+              { title: 'Portable Laptop Table', price: 'From ₹450' },
             ].map((des, index) => (
               <div key={index} className={styles.rowItems}>
                 <Image src={lapsvg} alt='/' className={styles.imgitems} />

@@ -257,6 +257,11 @@
   justify-content: center;
   align-items: center;
 }
+.itemDes p {
+  text-align: center;
+  width: 140px;
+  text-wrap: wrap;
+}
 .rowItemsNext {
   position: absolute;
   background-color: rgba(227, 227, 227, 0.5);
