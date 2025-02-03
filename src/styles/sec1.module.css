@@ -243,6 +243,7 @@
 .rowItems {
   display: grid;
   grid-template-rows: 75% 25%;
+  cursor: pointer;
 }
 .imgitems {
   width: 160px;
@@ -261,6 +262,9 @@
   text-align: center;
   width: 140px;
   text-wrap: wrap;
+}
+.rowItems:hover .itemDes p {
+  color: blue;
 }
 .rowItemsNext {
   position: absolute;
