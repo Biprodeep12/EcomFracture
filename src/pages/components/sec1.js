@@ -17,7 +17,7 @@ import heart from '@/images/heart.svg';
 import share from '@/images/share.svg';
 import heartRed from '@/images/heartRed.svg';
 import { db, auth } from '@/firebase/firebase';
-import { doc, getDoc, updateDoc, arrayUnion } from 'firebase/firestore';
+import { doc, getDoc, updateDoc, setDoc, arrayUnion } from 'firebase/firestore';
 import { useRouter } from 'next/router';
 
 import Samsug from '@/ProdutImages/Samsung4k.webp';
@@ -37,7 +37,8 @@ const sec2Cont1 = [
   {
     img: Samsug,
     title: 'Samsung Crystal UHD 4K TV',
-    price: '₹29,999',
+    price: '29,999',
+    orgPrice: '49,999',
     features: [
       '43-inch Ultra HD (4K) display',
       'Smart Tizen OS',
@@ -54,7 +55,8 @@ const sec2Cont1 = [
   {
     img: Dyson,
     title: 'Dyson Air Purifier & Heater',
-    price: '₹42,499',
+    price: '42,499',
+    orgPrice: '68,900',
     features: [
       'HEPA filter captures 99.97% pollutants',
       'Hot & Cool Airflow with intelligent temperature control',
@@ -71,7 +73,8 @@ const sec2Cont1 = [
   {
     img: Sony,
     title: 'Sony Bravia OLED 55-inch',
-    price: '₹89,999',
+    price: '89,999',
+    orgPrice: '116,900',
     features: [
       '55-inch OLED 4K HDR display',
       'Dolby Vision & Dolby Atmos support',
@@ -88,7 +91,8 @@ const sec2Cont1 = [
   {
     img: Phil,
     title: 'Philips Air Fryer XXL',
-    price: '₹9,499',
+    price: '9,499',
+    orgPrice: '15,999',
     features: [
       'Rapid Air Technology for healthy frying',
       '1.4 kg large capacity for family meals',
@@ -105,7 +109,8 @@ const sec2Cont1 = [
   {
     img: Whirl,
     title: 'Whirlpool 7kg Washing Machine',
-    price: '₹25,999',
+    price: '25,999',
+    orgPrice: '35,000',
     features: [
       '6th Sense Technology for automatic load sensing',
       '1200 RPM powerful motor',
@@ -122,7 +127,8 @@ const sec2Cont1 = [
   {
     img: LG,
     title: 'LG 8kg Wi-Fi Direct Washing Machine',
-    price: '₹34,990',
+    price: '34,990',
+    orgPrice: '78,000',
     features: [
       'AI DD Technology for fabric protection',
       'Smart ThinQ app control via Wi-Fi',
@@ -141,7 +147,8 @@ const sec2Cont2 = [
   {
     img: ColWard,
     title: 'Modern Collapsible Wardrobe',
-    price: '₹1,299',
+    price: '1,299',
+    orgPrice: '5,000',
     features: [
       'High-quality non-woven fabric cover',
       'Sturdy steel frame for durability',
@@ -158,7 +165,8 @@ const sec2Cont2 = [
   {
     img: Dinn,
     title: 'Luxury 4-Seater Dining Table Set',
-    price: '₹7,999',
+    price: '7,999',
+    orgPrice: '15,000',
     features: [
       'Premium solid wood construction',
       'Scratch-resistant & waterproof finish',
@@ -175,7 +183,8 @@ const sec2Cont2 = [
   {
     img: Chair,
     title: 'Ergonomic Office Chair',
-    price: '₹5,999',
+    price: '5,999',
+    orgPrice: '8,999',
     features: [
       'Adjustable height & tilt mechanism',
       'Breathable mesh backrest for airflow',
@@ -192,7 +201,8 @@ const sec2Cont2 = [
   {
     img: Bed,
     title: 'Solid Wood Queen Size Bed',
-    price: '₹13,499',
+    price: '13,499',
+    orgPrice: '18,500',
     features: [
       'Premium engineered wood with natural finish',
       'Sturdy frame with a weight capacity of 250 kg',
@@ -209,7 +219,8 @@ const sec2Cont2 = [
   {
     img: ColSt,
     title: 'Collapsible Shoe Rack',
-    price: '₹2,499',
+    price: '2,499',
+    orgPrice: '3,900',
     features: [
       '5-tier storage for up to 25 pairs of shoes',
       'Waterproof & dustproof fabric cover',
@@ -226,7 +237,8 @@ const sec2Cont2 = [
   {
     img: port,
     title: 'Adjustable Portable Laptop Table',
-    price: '₹799',
+    price: '799',
+    orgPrice: '1,500',
     features: [
       'Ergonomic height & angle adjustment',
       'Sturdy MDF wood top with anti-scratch coating',
@@ -431,6 +443,10 @@ export default function Sect() {
     try {
       const item = { title, price };
 
+      if (!userDoc.exists()) {
+        await setDoc(userRef, { wishlist: [] });
+      }
+
       if (wishes[title]) {
         const updatedWishlist = userDoc
           .data()
@@ -467,6 +483,7 @@ export default function Sect() {
       query: {
         title: item.title,
         price: item.price,
+        orgPrice: item.orgPrice,
         image: item.img.src,
         features: item.features,
       },
@@ -586,7 +603,7 @@ export default function Sect() {
                 <Image src={des.img} alt='/' className={styles.imgitems} />
                 <div className={styles.itemDes}>
                   <p>{des.title}</p>
-                  <h4>From {des.price}</h4>
+                  <h4>From ₹{des.price}</h4>
                 </div>
               </div>
             ))}
@@ -655,7 +672,7 @@ export default function Sect() {
                 <Image src={des.img} alt='/' className={styles.imgitems} />
                 <div className={styles.itemDes}>
                   <p>{des.title}</p>
-                  <h4>From {des.price}</h4>
+                  <h4>From ₹{des.price}</h4>
                 </div>
               </div>
             ))}
@@ -827,18 +844,18 @@ export default function Sect() {
           <h1>Recently Viewed</h1>
           <div ref={scrollContainerRef} className={styles.sec2items}>
             {[
-              { title: 'Godrej Refrigerator', price: 'From ₹7,240' },
-              { title: 'Godrej Refrigerator', price: 'From ₹7,240' },
-              { title: 'Godrej Refrigerator', price: 'From ₹7,240' },
-              { title: 'Godrej Refrigerator', price: 'From ₹7,240' },
-              { title: 'Godrej Refrigerator', price: 'From ₹7,240' },
-              { title: 'Godrej Refrigerator', price: 'From ₹7,240' },
+              { title: 'Godrej Refrigerator', price: '7,240' },
+              { title: 'Godrej Refrigerator', price: '7,240' },
+              { title: 'Godrej Refrigerator', price: '7,240' },
+              { title: 'Godrej Refrigerator', price: '7,240' },
+              { title: 'Godrej Refrigerator', price: '7,240' },
+              { title: 'Godrej Refrigerator', price: '7,240' },
             ].map((des, index) => (
               <div key={index} className={styles.rowItems}>
                 <Image src={lapsvg} alt='/' className={styles.imgitems} />
                 <div className={styles.itemDes}>
                   <p>{des.title}</p>
-                  <h4>{des.price}</h4>
+                  <h4>From ₹{des.price}</h4>
                 </div>
               </div>
             ))}

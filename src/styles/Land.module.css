@@ -67,8 +67,9 @@
   background-color: rgb(212, 118, 41);
 }
 .descri {
-  display: grid;
-  grid-template-rows: 8% 8% 5% 10% 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 .productTitle {
   font-size: 30px;
@@ -90,7 +91,6 @@
   color: green;
   font-weight: 600;
   font-size: 18px;
-  align-self: end;
 }
 .productPrice {
   display: flex;
@@ -116,6 +116,7 @@
   margin: 0 40px 15px 0;
   border: 1px solid #ccc;
   display: grid;
+  height: 380px;
   grid-template-rows: 60px 370px;
 }
 .featHead {
@@ -208,6 +209,38 @@
 .revName {
   font-weight: 600;
 }
+.monBtn {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  display: none;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  padding: 5px 10px;
+  z-index: 100;
+  border-top: 1px solid #ccc;
+}
+.mobAddCart,
+.mobBuyNow {
+  border-radius: 5px;
+  height: 70px;
+  background-color: #1500ff;
+  height: 60px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.mobAddCart {
+  background-color: rgb(255, 194, 82);
+}
+.mobBuyNow {
+  background-color: rgb(0, 180, 6);
+}
 @media screen and (max-width: 1130px) {
   .sec2 {
     grid-template-columns: 1fr;
@@ -250,13 +283,17 @@
     justify-self: center;
   }
   .featuresCont {
-    margin: 0 00px 15px 0;
+    margin: 0;
   }
+
   .product {
     margin-bottom: 20px;
   }
   .sec2 {
     margin-bottom: 100px;
+  }
+  .monBtn {
+    display: grid;
   }
 }
 @media screen and (max-width: 580px) {
@@ -270,11 +307,15 @@
   }
 }
 @media screen and (max-width: 470px) {
+  .product {
+    height: 1050px;
+    grid-template-rows: 37% 63%;
+  }
   .descri {
-    margin: 0 20px;
+    margin: 20px 20px;
   }
   .featlist {
-    padding-top: 10px;
+    padding: 10px 0 0 5px;
   }
   .featlist li {
     font-size: 17px;

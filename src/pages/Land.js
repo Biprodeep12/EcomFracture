@@ -1,8 +1,12 @@
 import { useRouter } from 'next/router';
 import Image from 'next/image';
+import { useState } from 'react';
 import Nav from './components/nav';
 import styles from '@/styles/Land.module.css';
 import { BadgePercent } from 'lucide-react';
+import Login from './components/auth/login';
+import { doc, getDoc, setDoc, updateDoc, arrayUnion } from 'firebase/firestore';
+import { auth, db } from '@/firebase/firebase';
 
 const bankOffers = [
   '5% Unlimited Cashback on Flipkart Axis Bank Credit Card',
@@ -45,12 +49,53 @@ const reviews = [
   },
 ];
 export default function ClickedItems() {
+  const [displaySign, setDisplaySign] = useState(true);
+  const [user, setUser] = useState(null);
   const router = useRouter();
-  const { title, price, image, features } = router.query;
+  const { title, price, orgPrice, image, features } = router.query;
+
+  useState(() => {
+    auth.onAuthStateChanged((currentUser) => {
+      setUser(currentUser);
+    });
+  }, []);
+
+  const handleAddToCart = async () => {
+    if (!user) {
+      alert('Please log in to add items to your cart.');
+      return;
+    }
+
+    const userRef = doc(db, 'users', user.uid);
+    const userDoc = await getDoc(userRef);
+
+    try {
+      if (!userDoc.exists()) {
+        await setDoc(userRef, { cart: [] });
+      }
+
+      const item = {
+        title,
+        price,
+        image,
+        orgPrice,
+        features: features || [],
+      };
+
+      await updateDoc(userRef, {
+        cart: arrayUnion(item),
+      });
+
+      alert('Item added to cart!');
+    } catch (error) {
+      console.error('Error adding to cart:', error);
+    }
+  };
 
   return (
     <>
-      <Nav />
+      <Login displaySign={displaySign} setDisplaySign={setDisplaySign} />
+      <Nav setDisplaySign={setDisplaySign} />
       <div className={styles.productDisplay}>
         <div className={styles.endDisplay}>
           <div className={styles.product}>
@@ -63,7 +108,9 @@ export default function ClickedItems() {
                 alt='img'
               />
               <div className={styles.buyAndCart}>
-                <div className={styles.addCart}>Add to Cart</div>
+                <div className={styles.addCart} onClick={handleAddToCart}>
+                  Add to Cart
+                </div>
                 <div className={styles.buyNow}>Buy Now</div>
               </div>
             </div>
@@ -72,9 +119,17 @@ export default function ClickedItems() {
               <div className={styles.productRate}>4 Star</div>
               <p>Special Price</p>
               <div className={styles.productPrice}>
-                <div className={styles.disPrice}>{price}</div>
-                <div className={styles.orgPrice}>₹9999</div>
-                <div className={styles.dis}>50% off</div>
+                <div className={styles.disPrice}>₹{price}</div>
+                <div className={styles.orgPrice}>₹{orgPrice}</div>
+                <div className={styles.dis}>
+                  {(
+                    ((Number(orgPrice.toString().replace(/,/g, '')) -
+                      Number(price.toString().replace(/,/g, ''))) /
+                      Number(orgPrice.toString().replace(/,/g, ''))) *
+                    100
+                  ).toFixed(0)}
+                  % off
+                </div>
               </div>
               <div className={styles.featuresCont}>
                 <div className={styles.featHead}>Product Description</div>
@@ -113,6 +168,12 @@ export default function ClickedItems() {
             </div>
           </div>
         </div>
+      </div>
+      <div className={styles.monBtn}>
+        <div className={styles.mobAddCart} onClick={handleAddToCart}>
+          Add to Cart
+        </div>
+        <div className={styles.mobBuyNow}>Buy Now</div>
       </div>
     </>
   );
