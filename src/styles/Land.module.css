@@ -1,0 +1,286 @@
+.productDisplay {
+  padding-top: 75px;
+}
+.endDisplay::-webkit-scrollbar {
+  display: none;
+}
+.endDisplay {
+  width: 100%;
+  min-height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.product {
+  height: 650px;
+  max-width: 1100px;
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  display: grid;
+  grid-template-columns: 45% 55%;
+  padding: 40px 0 0 0;
+  margin-bottom: 50px;
+}
+.prodImg {
+  padding: 10px;
+  border: 1px solid #ccc;
+  width: 400px;
+  max-height: 400px;
+  height: 100%;
+}
+.imageAndProd {
+  align-self: flex-start;
+  justify-self: center;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 70% 30%;
+}
+.buyAndCart {
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  align-items: center;
+  margin-top: 10px;
+}
+.addCart,
+.buyNow {
+  cursor: pointer;
+  max-width: 400px;
+  width: 100%;
+  height: 65px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  font-weight: 600;
+}
+.addCart {
+  background-color: rgb(255, 194, 82);
+}
+.buyNow {
+  background-color: rgb(212, 118, 41);
+}
+.descri {
+  display: grid;
+  grid-template-rows: 8% 8% 5% 10% 400px;
+}
+.productTitle {
+  font-size: 30px;
+}
+.productRate {
+  font-weight: 900;
+  font-size: 20px;
+  text-wrap: nowrap;
+  background-color: rgb(0, 181, 0);
+  color: white;
+  height: 35px;
+  width: 80px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.descri p {
+  color: green;
+  font-weight: 600;
+  font-size: 18px;
+  align-self: end;
+}
+.productPrice {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  align-items: center;
+}
+.disPrice {
+  font-size: 30px;
+  font-weight: 600;
+}
+.orgPrice {
+  font-size: 20px;
+  color: #848484;
+  text-decoration: line-through;
+}
+.dis {
+  font-size: 21px;
+  font-weight: 600;
+  color: green;
+}
+.featuresCont {
+  margin: 0 40px 15px 0;
+  border: 1px solid #ccc;
+  display: grid;
+  grid-template-rows: 60px 370px;
+}
+.featHead {
+  align-self: center;
+  justify-self: left;
+  padding-left: 20px;
+  font-size: 25px;
+  font-weight: 600;
+}
+.featlist {
+  border-top: 1px solid #ccc;
+  padding: 20px 15px 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.featlist li {
+  font-size: 20px;
+}
+.sec2 {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 50px;
+}
+.offers {
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.offerHead,
+.revHead {
+  max-width: 550px;
+  width: 100%;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  font-weight: 600;
+}
+.offerDetail,
+.revDetail {
+  max-width: 550px;
+  width: 100%;
+  height: 450px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+}
+.offerItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 19px;
+}
+.offerIcon {
+  min-width: 20px;
+  min-height: 20px;
+  color: #1500ff;
+}
+
+.reviews {
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.revDetpt {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  font-size: 19px;
+}
+.revName {
+  font-weight: 600;
+}
+@media screen and (max-width: 1130px) {
+  .sec2 {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 25px;
+  }
+}
+@media screen and (max-width: 950px) {
+  .descri {
+    padding-left: 50px;
+  }
+  .imageAndProd {
+    padding-left: 60px;
+  }
+  .featlist li {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 840px) {
+  .product {
+    grid-template-columns: 1fr;
+    grid-template-rows: 40% 60%;
+    height: 1000px;
+    border-radius: 0;
+    padding-bottom: 50px;
+  }
+  .imageAndProd {
+    grid-template-rows: 1fr;
+    padding-left: 0;
+  }
+  .buyAndCart {
+    display: none;
+  }
+  .prodImg {
+    width: 350px;
+    height: 350px;
+  }
+  .descri {
+    padding-left: 0;
+    justify-self: center;
+  }
+  .featuresCont {
+    margin: 0 00px 15px 0;
+  }
+  .product {
+    margin-bottom: 20px;
+  }
+  .sec2 {
+    margin-bottom: 100px;
+  }
+}
+@media screen and (max-width: 580px) {
+  .offerItem,
+  .revDetpt {
+    font-size: 17px;
+  }
+  .offerDetail,
+  .revDetail {
+    height: 480px;
+  }
+}
+@media screen and (max-width: 470px) {
+  .descri {
+    margin: 0 20px;
+  }
+  .featlist {
+    padding-top: 10px;
+  }
+  .featlist li {
+    font-size: 17px;
+  }
+  .offerDetail,
+  .revDetail {
+    height: 540px;
+  }
+}
