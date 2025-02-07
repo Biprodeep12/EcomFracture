@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Nav from './components/nav';
 import styles from '@/styles/Land.module.css';
 import { BadgePercent } from 'lucide-react';
@@ -18,6 +18,7 @@ const bankOffers = [
   '10% off up to ₹1,250 on IDFC FIRST Bank Credit EMI Txns on orders of ₹5,000 and above',
   '5% off up to ₹750 on IDFC FIRST Power Women Platinum and Signature Debit Card. Min Txn Value: ₹5,000',
 ];
+
 const reviews = [
   {
     user: 'Alex_TechGeek',
@@ -48,17 +49,31 @@ const reviews = [
     review: 'Loving the display clarity! Perfect for media consumption.',
   },
 ];
+
 export default function ClickedItems() {
   const [displaySign, setDisplaySign] = useState(true);
   const [user, setUser] = useState(null);
   const router = useRouter();
   const { title, price, orgPrice, image, features } = router.query;
 
-  useState(() => {
-    auth.onAuthStateChanged((currentUser) => {
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((currentUser) => {
       setUser(currentUser);
     });
+    return () => unsubscribe();
   }, []);
+
+  if (!router.isReady || !title || !price || !orgPrice) {
+    return <div>Loading...</div>;
+  }
+
+  const safePrice = Number((price?.toString() || '0').replace(/,/g, ''));
+  const safeOrgPrice = Number((orgPrice?.toString() || '0').replace(/,/g, ''));
+
+  const discountPercent =
+    safeOrgPrice > 0
+      ? (((safeOrgPrice - safePrice) / safeOrgPrice) * 100).toFixed(0)
+      : 0;
 
   const handleAddToCart = async () => {
     if (!user) {
@@ -121,15 +136,7 @@ export default function ClickedItems() {
               <div className={styles.productPrice}>
                 <div className={styles.disPrice}>₹{price}</div>
                 <div className={styles.orgPrice}>₹{orgPrice}</div>
-                <div className={styles.dis}>
-                  {(
-                    ((Number(orgPrice.toString().replace(/,/g, '')) -
-                      Number(price.toString().replace(/,/g, ''))) /
-                      Number(orgPrice.toString().replace(/,/g, ''))) *
-                    100
-                  ).toFixed(0)}
-                  % off
-                </div>
+                <div className={styles.dis}>{discountPercent}% off</div>
               </div>
               <div className={styles.featuresCont}>
                 <div className={styles.featHead}>Product Description</div>
