@@ -2,13 +2,13 @@ import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 const firebaseConfig = {
-  apiKey: 'AIzaSyCHfF3SIRKm4-8EvnEQ_agYro2zIX49TgI',
-  authDomain: 'ecomfracture.firebaseapp.com',
-  projectId: 'ecomfracture',
-  storageBucket: 'ecomfracture.firebasestorage.app',
-  messagingSenderId: '649341461247',
-  appId: '1:649341461247:web:731c506066194a491222ca',
-  measurementId: 'G-ZPN8W3P3DW',
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+  measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
 };
 
 const app = initializeApp(firebaseConfig);

@@ -1,3 +1,10 @@
+.load {
+  position: absolute;
+  left: 50%;
+  translate: -50%;
+  top: 200px;
+  font-size: 30px;
+}
 .productDisplay {
   padding-top: 75px;
 }
@@ -240,6 +247,49 @@
 }
 .mobBuyNow {
   background-color: rgb(0, 180, 6);
+}
+.popAlert {
+  position: fixed;
+  bottom: -50px;
+  left: 50%;
+  translate: -50%;
+  background-color: white;
+  padding: 0 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  text-align: center;
+  z-index: 50;
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+}
+.alertIcon {
+  margin-right: 10px;
+}
+.popup {
+  animation: alert 0.5s ease-in-out forwards;
+}
+.popdown {
+  animation: rest 0.5s ease-in-out forwards;
+}
+@keyframes alert {
+  from {
+    bottom: -50px;
+  }
+  to {
+    bottom: 60px;
+  }
+}
+@keyframes rest {
+  from {
+    bottom: 60px;
+  }
+  to {
+    bottom: -50px;
+  }
 }
 @media screen and (max-width: 1130px) {
   .sec2 {

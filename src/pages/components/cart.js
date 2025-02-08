@@ -3,12 +3,13 @@ import Image from 'next/image';
 import empbox from '@/images/empty.svg';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { doc, getDoc, updateDoc, arrayRemove } from 'firebase/firestore';
+import { doc, getDoc, updateDoc } from 'firebase/firestore';
 import { auth, db } from '@/firebase/firebase';
 import { Plus, Minus } from 'lucide-react';
 export default function Cart() {
   const [user, setUser] = useState(null);
   const [cartItems, setCartItems] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(async (currentUser) => {
@@ -37,6 +38,7 @@ export default function Cart() {
     } catch (error) {
       console.error('Error fetching cart items:', error);
     }
+    setLoading(false);
   };
 
   const handleRemove = async (item) => {
@@ -90,6 +92,10 @@ export default function Cart() {
       Number(item.orgPrice.toString().replace(/,/g, '')) * item.quantity,
     0,
   );
+
+  if (loading) {
+    return <div className={styles.loading}>Loading...</div>;
+  }
 
   return (
     <>
@@ -175,8 +181,8 @@ export default function Cart() {
                 <div className={styles.cartContPrice}>
                   <div className={styles.priceName}>
                     <p>
-                      Price (
-                      {cartItems.length > 1 && <>{cartItems.length} items</>})
+                      Price
+                      {cartItems.length > 1 && <>({cartItems.length} items)</>}
                     </p>
                     <p>Discount</p>
                     <p>Delivery Charges</p>

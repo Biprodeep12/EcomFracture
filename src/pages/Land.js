@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import Nav from './components/nav';
 import styles from '@/styles/Land.module.css';
-import { BadgePercent } from 'lucide-react';
+import { BadgePercent, CheckCircle } from 'lucide-react';
 import Login from './components/auth/login';
 import { doc, getDoc, setDoc, updateDoc, arrayUnion } from 'firebase/firestore';
 import { auth, db } from '@/firebase/firebase';
@@ -64,7 +64,7 @@ export default function ClickedItems() {
   }, []);
 
   if (!router.isReady || !title || !price || !orgPrice) {
-    return <div>Loading...</div>;
+    return <div className={styles.load}>Loading...</div>;
   }
 
   const safePrice = Number((price?.toString() || '0').replace(/,/g, ''));
@@ -181,6 +181,12 @@ export default function ClickedItems() {
           Add to Cart
         </div>
         <div className={styles.mobBuyNow}>Buy Now</div>
+      </div>
+      <div className={styles.popAlert}>
+        <h2>
+          <CheckCircle size={23} className={styles.alertIcon} />
+          Item Added To Cart
+        </h2>
       </div>
     </>
   );
