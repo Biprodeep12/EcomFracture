@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import { doc, getDoc, updateDoc } from 'firebase/firestore';
 import { auth, db } from '@/firebase/firebase';
 import { Plus, Minus } from 'lucide-react';
+import { useRouter } from 'next/router';
 export default function Cart() {
   const [user, setUser] = useState(null);
   const [cartItems, setCartItems] = useState([]);
@@ -93,6 +94,21 @@ export default function Cart() {
     0,
   );
 
+  const router = useRouter();
+
+  const handleClick = (item) => {
+    router.push({
+      pathname: '/Land',
+      query: {
+        title: item.title,
+        price: item.price,
+        orgPrice: item.orgPrice,
+        image: item.image,
+        features: item.features,
+      },
+    });
+  };
+
   if (loading) {
     return <div className={styles.loading}>Loading...</div>;
   }
@@ -120,9 +136,14 @@ export default function Cart() {
                       height={100}
                       alt={item.title}
                       className={styles.cartImage}
+                      onClick={() => handleClick(item)}
                     />
                     <div className={styles.itemDetails}>
-                      <h3 className={styles.itemTitle}>{item.title}</h3>
+                      <h3
+                        className={styles.itemTitle}
+                        onClick={() => handleClick(item)}>
+                        {item.title}
+                      </h3>
                       <div className={styles.itemPrice}>
                         <h3 className={styles.itemP1}>
                           ₹

@@ -7,6 +7,9 @@ import { BadgePercent, CheckCircle } from 'lucide-react';
 import Login from './components/auth/login';
 import { doc, getDoc, setDoc, updateDoc, arrayUnion } from 'firebase/firestore';
 import { auth, db } from '@/firebase/firebase';
+import heart from '@/images/heart.svg';
+import share from '@/images/share.svg';
+import heartRed from '@/images/heartRed.svg';
 
 const bankOffers = [
   '5% Unlimited Cashback on Flipkart Axis Bank Credit Card',
@@ -55,6 +58,7 @@ export default function ClickedItems() {
   const [user, setUser] = useState(null);
   const router = useRouter();
   const { title, price, orgPrice, image, features } = router.query;
+  const [isLiked, setIsLiked] = useState(false);
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((currentUser) => {
@@ -62,6 +66,24 @@ export default function ClickedItems() {
     });
     return () => unsubscribe();
   }, []);
+
+  useEffect(() => {
+    if (!user || !title) return;
+
+    const checkWishlist = async () => {
+      const userRef = doc(db, 'users', user.uid);
+      const userDoc = await getDoc(userRef);
+
+      if (userDoc.exists()) {
+        const wishlist = userDoc.data()?.wishlist || [];
+        const isItemInWishlist = wishlist.some(
+          (wishItem) => wishItem.title === title,
+        );
+        setIsLiked(isItemInWishlist);
+      }
+    };
+    checkWishlist();
+  }, [user, title]);
 
   if (!router.isReady || !title || !price || !orgPrice) {
     return <div className={styles.load}>Loading...</div>;
@@ -107,6 +129,49 @@ export default function ClickedItems() {
     }
   };
 
+  const handleLike = async () => {
+    if (!user) {
+      alert('Please log in to save items to your wishlist.');
+      return;
+    }
+
+    if (!title || price === undefined) {
+      console.error('Invalid item: missing title or price');
+      return;
+    }
+
+    const userRef = doc(db, 'users', user.uid);
+    const userDoc = await getDoc(userRef);
+
+    try {
+      let updatedWishlist = userDoc.data()?.wishlist || [];
+      const item = {
+        title,
+        img: image,
+        price,
+        orgPrice,
+        features: features || [],
+      };
+
+      if (isLiked) {
+        // Remove item from wishlist
+        updatedWishlist = updatedWishlist.filter(
+          (wishItem) => wishItem.title !== title,
+        );
+        await updateDoc(userRef, { wishlist: updatedWishlist });
+        setIsLiked(false);
+        alert('Item removed from Wishlist');
+      } else {
+        // Add item to wishlist
+        await updateDoc(userRef, { wishlist: arrayUnion(item) });
+        setIsLiked(true);
+        alert('Item added to Wishlist');
+      }
+    } catch (err) {
+      console.error('Error updating wishlist:', err);
+    }
+  };
+
   return (
     <>
       <Login displaySign={displaySign} setDisplaySign={setDisplaySign} />
@@ -122,6 +187,18 @@ export default function ClickedItems() {
                 src={image}
                 alt='img'
               />
+              <div className={styles.likeshareCont}>
+                <div onClick={handleLike} className={styles.likeshare}>
+                  <Image
+                    src={isLiked ? heartRed : heart}
+                    alt='like'
+                    className={styles.likeTP}
+                  />
+                </div>
+                <div className={styles.likeshare}>
+                  <Image src={share} alt='share' className={styles.shareTP} />
+                </div>
+              </div>
               <div className={styles.buyAndCart}>
                 <div className={styles.addCart} onClick={handleAddToCart}>
                   Add to Cart
@@ -136,7 +213,17 @@ export default function ClickedItems() {
               <div className={styles.productPrice}>
                 <div className={styles.disPrice}>₹{price}</div>
                 <div className={styles.orgPrice}>₹{orgPrice}</div>
-                <div className={styles.dis}>{discountPercent}% off</div>
+                <div className={styles.dis}>
+                  {discountPercent
+                    ? discountPercent
+                    : (
+                        ((Number(orgPrice.toString().replace(/,/g, '')) -
+                          Number(price.toString().replace(/,/g, ''))) /
+                          Number(orgPrice.toString().replace(/,/g, ''))) *
+                        100
+                      ).toFixed(0)}
+                  % off
+                </div>
               </div>
               <div className={styles.featuresCont}>
                 <div className={styles.featHead}>Product Description</div>

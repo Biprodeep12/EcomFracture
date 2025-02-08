@@ -6,6 +6,7 @@ import Image from 'next/image';
 import wish from '@/images/wishlist.svg';
 import bin from '@/images/bin.svg';
 import styles from '@/styles/wish.module.css';
+import { useRouter } from 'next/router';
 
 export default function Wish() {
   const [user, setUser] = useState(null);
@@ -47,6 +48,21 @@ export default function Wish() {
     }
   };
 
+  const router = useRouter();
+
+  const handleClick = (item) => {
+    router.push({
+      pathname: '/Land',
+      query: {
+        title: item.title,
+        price: item.price,
+        orgPrice: item.orgPrice,
+        image: item.img.src ? item.img.src : item.img,
+        features: item.features,
+      },
+    });
+  };
+
   if (loading) {
     return <div className={styles.loading}>Loading...</div>;
   }
@@ -67,7 +83,11 @@ export default function Wish() {
             {wishlist.map((item, index) => (
               <div key={index} className={styles.wishItem}>
                 <div className={styles.wishDetails}>
-                  <div className={styles.itemTitle}>{item.title}</div>
+                  <div
+                    className={styles.itemTitle}
+                    onClick={() => handleClick(item)}>
+                    {item.title}
+                  </div>
                   <div className={styles.itemPrice}>
                     Price: <p>${item.price}</p>
                   </div>

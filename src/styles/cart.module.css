@@ -80,6 +80,11 @@
   margin-top: 10px;
   font-size: 20px;
 }
+.cartImage:hover,
+.itemTitle:hover {
+  cursor: pointer;
+  color: blue;
+}
 .itemPrice {
   display: flex;
   flex-direction: row;
