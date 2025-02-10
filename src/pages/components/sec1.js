@@ -1,9 +1,9 @@
 import styles from '@/styles/sec1.module.css';
 import React, { useEffect, useState, useRef } from 'react';
 import Image from 'next/image';
-import lap1 from '@/images/laptopImg.webp';
-import lap2 from '@/images/rogLap.webp';
-import lap3 from '@/images/lap.webp';
+import lap1 from '@/ProdutImages/lap1.png';
+import lap2 from '@/ProdutImages/lap2.png';
+import lap3 from '@/ProdutImages/lap3.png';
 import prev from '@/images/prevbtn.svg';
 import next from '@/images/nextbtn.svg';
 import lapsvg from '@/images/lapsvg.webp';
@@ -272,117 +272,418 @@ const sec2Cont2 = [
 const prodColumn = [
   {
     head: 'Recommended Items',
-    title1: 'Sony WH-1000XM5 Noise Cancelling Headphones',
-    OrgPrice1: '₹29,999',
-    DisPrice1: '₹25,999',
-    Dis1: '13% off',
-    title2: 'Apple MacBook Air M2 Chip - 13.6-inch',
-    OrgPrice2: '₹1,14,900',
-    DisPrice2: '₹1,05,900',
-    Dis2: '8% off',
-    title3: 'Samsung Galaxy S23 Ultra 5G',
-    OrgPrice3: '₹1,24,999',
-    DisPrice3: '₹1,09,999',
-    Dis3: '12% off',
-    title4: 'boAt Airdopes 141 Wireless Earbuds',
-    OrgPrice4: '₹4,499',
-    DisPrice4: '₹1,299',
-    Dis4: '71% off',
+    items: [
+      {
+        img: lapsvg,
+        title: 'Sony WH-1000XM5 Noise Cancelling Headphones',
+        orgPrice: '29,999',
+        price: '25,999',
+        Discount: '13% off',
+        features: [
+          'Industry-leading Active Noise Cancellation',
+          'Up to 30 hours of battery life',
+          'Touch controls for playback and volume',
+          'LDAC support for high-resolution audio',
+          'Multipoint connection for dual device pairing',
+          'Adaptive sound control',
+          'Lightweight and comfortable fit',
+        ],
+      },
+      {
+        img: lapsvg,
+        title: 'Apple MacBook Air M2 Chip - 13.6-inch',
+        orgPrice: '1,14,900',
+        price: '1,05,900',
+        Discount: '8% off',
+        features: [
+          'Apple M2 chip with 8-core CPU & 8-core GPU',
+          '13.6-inch Liquid Retina display',
+          'Up to 18 hours of battery life',
+          'Fanless design for silent operation',
+          'MagSafe charging port',
+          '1080p FaceTime HD camera',
+          'Supports up to 24GB unified memory',
+        ],
+      },
+      {
+        img: lapsvg,
+        title: 'Samsung Galaxy S23 Ultra 5G',
+        orgPrice: '1,24,999',
+        price: '1,09,999',
+        Discount: '12% off',
+        features: [
+          '6.8-inch Dynamic AMOLED 2X display',
+          '200MP primary camera with Nightography',
+          'Snapdragon 8 Gen 2 processor',
+          'S Pen support with built-in slot',
+          '5,000mAh battery with 45W fast charging',
+          'IP68 water and dust resistance',
+          'One UI 5.1 based on Android 13',
+        ],
+      },
+      {
+        img: lapsvg,
+        title: 'boAt Airdopes 141 Wireless Earbuds',
+        orgPrice: '4,499',
+        price: '1,299',
+        Discount: '71% off',
+        features: [
+          'Up to 42 hours of total playback',
+          'ENx technology for clear calls',
+          '10mm dynamic drivers',
+          'IPX4 sweat and water resistance',
+          'Bluetooth v5.1 for stable connectivity',
+          'Low-latency gaming mode',
+          'Type-C fast charging support',
+        ],
+      },
+    ],
   },
   {
     head: 'More to Explore',
-    title1: 'Asus ROG Strix G16 Gaming Laptop',
-    OrgPrice1: '₹1,29,990',
-    DisPrice1: '₹1,09,990',
-    Dis1: '15% off',
-    title2: 'GoPro HERO12 Black Action Camera',
-    OrgPrice2: '₹45,000',
-    DisPrice2: '₹39,500',
-    Dis2: '12% off',
-    title3: 'Logitech MX Master 3S Wireless Mouse',
-    OrgPrice3: '₹10,999',
-    DisPrice3: '₹8,999',
-    Dis3: '18% off',
-    title4: 'Kindle Paperwhite 11th Gen',
-    OrgPrice4: '₹13,999',
-    DisPrice4: '₹11,499',
-    Dis4: '18% off',
+    items: [
+      {
+        img: lapsvg,
+        title: 'Asus ROG Strix G16 Gaming Laptop',
+        orgPrice: '1,29,990',
+        price: '1,09,990',
+        Discount: '15% off',
+        features: [
+          'Intel Core i7 13th Gen processor',
+          'NVIDIA RTX 4060 GPU',
+          '16GB DDR5 RAM, 512GB SSD',
+          '165Hz 16-inch QHD+ display',
+          'Per-key RGB backlit keyboard',
+          'ROG Intelligent Cooling system',
+          'Dolby Atmos audio',
+        ],
+      },
+      {
+        img: lapsvg,
+        title: 'GoPro HERO12 Black Action Camera',
+        orgPrice: '45,000',
+        price: '39,500',
+        Discount: '12% off',
+        features: [
+          '5.3K60 and 4K120 video recording',
+          'HyperSmooth 6.0 stabilization',
+          'Waterproof up to 33ft',
+          '10-bit color depth for vivid visuals',
+          'Horizon Lock for steady shots',
+          'Voice control and live streaming',
+          'GP2 processor for high performance',
+        ],
+      },
+      {
+        img: lapsvg,
+        title: 'Logitech MX Master 3S Wireless Mouse',
+        orgPrice: '10,999',
+        price: '8,999',
+        Discount: '18% off',
+        features: [
+          '8K DPI precision sensor',
+          'Silent magnetic scroll wheel',
+          'Ergonomic hand-sculpted design',
+          'Up to 70 days of battery life',
+          'USB-C quick charging',
+          'Customizable buttons',
+          'Works on virtually any surface',
+        ],
+      },
+      {
+        img: lapsvg,
+        title: 'Kindle Paperwhite 11th Gen',
+        orgPrice: '13,999',
+        price: '11,499',
+        Discount: '18% off',
+        features: [
+          '6.8-inch glare-free display',
+          'Adjustable warm light',
+          'Up to 10 weeks of battery life',
+          'Waterproof (IPX8 rating)',
+          '300 PPI high-resolution screen',
+          'Bluetooth support for audiobooks',
+          'USB-C charging',
+        ],
+      },
+    ],
   },
   {
     head: 'Top Selection',
-    title1: 'Samsung The Frame 55-inch QLED 4K TV',
-    OrgPrice1: '₹1,29,990',
-    DisPrice1: '₹89,990',
-    Dis1: '31% off',
-    title2: 'Sony PlayStation 5 Console',
-    OrgPrice2: '₹54,990',
-    DisPrice2: '₹49,990',
-    Dis2: '9% off',
-    title3: 'Nikon Z50 Mirrorless Camera',
-    OrgPrice3: '₹99,995',
-    DisPrice3: '₹89,995',
-    Dis3: '10% off',
-    title4: 'Bose SoundLink Revolve+ Bluetooth Speaker',
-    OrgPrice4: '₹29,999',
-    DisPrice4: '₹24,999',
-    Dis4: '16% off',
+    items: [
+      {
+        img: lapsvg,
+        title: 'Samsung The Frame 55-inch QLED 4K TV',
+        orgPrice: '1,29,990',
+        price: '89,990',
+        Discount: '31% off',
+        features: [
+          '55-inch QLED 4K UHD display',
+          'Art Mode to display artwork when not in use',
+          'Quantum HDR for enhanced contrast',
+          '100% Color Volume with Quantum Dot technology',
+          'Motion Sensor to activate Art Mode',
+          'Dolby Atmos and Object Tracking Sound',
+          'Slim Fit Wall Mount for seamless installation',
+        ],
+      },
+      {
+        img: lapsvg,
+        title: 'Sony PlayStation 5 Console',
+        orgPrice: '54,990',
+        price: '49,990',
+        Discount: '9% off',
+        features: [
+          'Ultra-fast SSD for near-instant loading',
+          'Ray tracing for realistic lighting and shadows',
+          '4K gaming with up to 120Hz refresh rate',
+          'Haptic feedback and adaptive triggers',
+          'Tempest 3D AudioTech for immersive sound',
+          'Backwards compatibility with PS4 games',
+          'DualSense controller with advanced vibration',
+        ],
+      },
+      {
+        img: lapsvg,
+        title: 'Nikon Z50 Mirrorless Camera',
+        orgPrice: '99,995',
+        price: '89,995',
+        Discount: '10% off',
+        features: [
+          '20.9MP APS-C CMOS sensor',
+          '4K UHD video recording',
+          '11fps continuous shooting',
+          'Flip-down touchscreen for vlogging',
+          'Eye-detection autofocus',
+          'Bluetooth and Wi-Fi connectivity',
+          'Weather-sealed body',
+        ],
+      },
+      {
+        img: lapsvg,
+        title: 'Bose SoundLink Revolve+ Bluetooth Speaker',
+        orgPrice: '29,999',
+        price: '24,999',
+        Discount: '16% off',
+        features: [
+          '360-degree sound for uniform audio dispersion',
+          'IP55 water and dust resistance',
+          'Up to 17 hours of battery life',
+          'Built-in microphone for voice assistant support',
+          'Pair two speakers for stereo mode',
+          'Rugged aluminum body',
+          'Supports NFC pairing',
+        ],
+      },
+    ],
   },
   {
     head: 'Suggested for You',
-    title1: 'HP Pavilion x360 Touchscreen Laptop',
-    OrgPrice1: '₹74,999',
-    DisPrice1: '₹67,999',
-    Dis1: '9% off',
-    title2: 'Apple iPad Air (5th Gen, Wi-Fi, 64GB)',
-    OrgPrice2: '₹59,900',
-    DisPrice2: '₹54,900',
-    Dis2: '8% off',
-    title3: 'JBL PartyBox 310 Portable Speaker',
-    OrgPrice3: '₹44,999',
-    DisPrice3: '₹39,999',
-    Dis3: '11% off',
-    title4: 'Canon EOS R10 Mirrorless Camera',
-    OrgPrice4: '₹84,995',
-    DisPrice4: '₹79,995',
-    Dis4: '6% off',
+    items: [
+      {
+        img: lapsvg,
+        title: 'HP Pavilion x360 Touchscreen Laptop',
+        orgPrice: '74,999',
+        price: '67,999',
+        Discount: '9% off',
+        features: [
+          '11th Gen Intel Core i5 processor',
+          '14-inch Full HD touchscreen display',
+          '360-degree hinge for multiple modes',
+          '8GB RAM, 512GB SSD storage',
+          'Backlit keyboard',
+          'B&O dual speakers',
+          'Fast-charging support',
+        ],
+      },
+      {
+        img: lapsvg,
+        title: 'Apple iPad Air (5th Gen, Wi-Fi, 64GB)',
+        orgPrice: '59,900',
+        price: '54,900',
+        Discount: '8% off',
+        features: [
+          'Apple M1 chip for faster performance',
+          '10.9-inch Liquid Retina display',
+          'Touch ID for secure authentication',
+          'Supports Apple Pencil (2nd Gen)',
+          '12MP ultra-wide front camera with Center Stage',
+          'All-day battery life',
+          'Wi-Fi 6 for fast internet connectivity',
+        ],
+      },
+      {
+        img: lapsvg,
+        title: 'JBL PartyBox 310 Portable Speaker',
+        orgPrice: '44,999',
+        price: '39,999',
+        Discount: '11% off',
+        features: [
+          '240W powerful JBL Pro Sound',
+          'Dynamic light show with party sync',
+          'Up to 18 hours of battery life',
+          'IPX4 splash-proof rating',
+          'Bluetooth, USB, and AUX connectivity',
+          'Dual mic and guitar inputs',
+          'Telescopic handle and wheels for portability',
+        ],
+      },
+      {
+        img: lapsvg,
+        title: 'Canon EOS R10 Mirrorless Camera',
+        orgPrice: '84,995',
+        price: '79,995',
+        Discount: '6% off',
+        features: [
+          '24.2MP APS-C CMOS sensor',
+          '4K 60p video recording',
+          'Dual Pixel CMOS AF II for fast focus',
+          '15fps continuous shooting',
+          'Vari-angle LCD touchscreen',
+          'Wi-Fi and Bluetooth connectivity',
+          'Lightweight and compact design',
+        ],
+      },
+    ],
   },
   {
     head: 'Trending in Laptops',
-    title1: 'Dell XPS 13 OLED Laptop',
-    OrgPrice1: '₹1,49,990',
-    DisPrice1: '₹1,29,990',
-    Dis1: '13% off',
-    title2: 'Lenovo Legion 5 Pro Gaming Laptop',
-    OrgPrice2: '₹1,69,990',
-    DisPrice2: '₹1,49,990',
-    Dis2: '12% off',
-    title3: 'Microsoft Surface Laptop Studio',
-    OrgPrice3: '₹2,09,999',
-    DisPrice3: '₹1,89,999',
-    Dis3: '10% off',
-    title4: 'Acer Nitro 5 Gaming Laptop',
-    OrgPrice4: '₹89,999',
-    DisPrice4: '₹79,999',
-    Dis4: '11% off',
+    items: [
+      {
+        img: lapsvg,
+        title: 'Dell XPS 13 OLED Laptop',
+        orgPrice: '1,49,990',
+        price: '1,29,990',
+        Discount: '13% off',
+        features: [
+          '13.4-inch 3.5K OLED touchscreen',
+          'Intel Core i7 13th Gen processor',
+          '16GB RAM, 512GB SSD storage',
+          'Backlit keyboard with fingerprint reader',
+          'EyeSafe display technology',
+          'Thunderbolt 4 support',
+          'Long-lasting battery life',
+        ],
+      },
+      {
+        img: lapsvg,
+        title: 'Lenovo Legion 5 Pro Gaming Laptop',
+        orgPrice: '1,69,990',
+        price: '1,49,990',
+        Discount: '12% off',
+        features: [
+          'AMD Ryzen 7 6800H processor',
+          'NVIDIA RTX 3070 Ti GPU',
+          '16-inch WQXGA 165Hz display',
+          '16GB DDR5 RAM, 1TB SSD storage',
+          'Legion Coldfront 4.0 cooling system',
+          'Per-key RGB backlit keyboard',
+          'Nahimic 3D audio',
+        ],
+      },
+      {
+        img: lapsvg,
+        title: 'Microsoft Surface Laptop Studio',
+        orgPrice: '2,09,999',
+        price: '1,89,999',
+        Discount: '10% off',
+        features: [
+          '14.4-inch PixelSense Flow touchscreen',
+          'Intel Core i7 11th Gen processor',
+          'NVIDIA RTX 3050 Ti GPU',
+          '16GB RAM, 512GB SSD storage',
+          'Dynamic woven hinge for multiple modes',
+          'Windows 11 Pro pre-installed',
+          'Studio-quality dual far-field microphones',
+        ],
+      },
+      {
+        img: lapsvg,
+        title: 'Acer Nitro 5 Gaming Laptop',
+        orgPrice: '89,999',
+        price: '79,999',
+        Discount: '11% off',
+        features: [
+          'Intel Core i5 12th Gen processor',
+          'NVIDIA RTX 3050 GPU',
+          '15.6-inch FHD 144Hz display',
+          '8GB RAM, 512GB SSD storage',
+          'NitroSense cooling technology',
+          'RGB backlit keyboard',
+          'DTS:X Ultra audio',
+        ],
+      },
+    ],
   },
   {
     head: 'Recommended for You',
-    title1: 'OnePlus Nord CE 3 Lite 5G',
-    OrgPrice1: '₹21,999',
-    DisPrice1: '₹19,999',
-    Dis1: '9% off',
-    title2: 'Samsung Galaxy Watch 5 Pro',
-    OrgPrice2: '₹44,999',
-    DisPrice2: '₹39,999',
-    Dis2: '11% off',
-    title3: 'Anker PowerCore 20000mAh Power Bank',
-    OrgPrice3: '₹5,499',
-    DisPrice3: '₹3,999',
-    Dis3: '27% off',
-    title4: 'TP-Link Archer AX73 Wi-Fi 6 Router',
-    OrgPrice4: '₹15,999',
-    DisPrice4: '₹12,999',
-    Dis4: '19% off',
+    items: [
+      {
+        img: lapsvg,
+        title: 'OnePlus Nord CE 3 Lite 5G',
+        orgPrice: '21,999',
+        price: '19,999',
+        Discount: '9% off',
+        features: [
+          '6.72-inch FHD+ 120Hz display',
+          'Snapdragon 695 processor',
+          '108MP AI triple camera setup',
+          '5000mAh battery with 67W SUPERVOOC charging',
+          'OxygenOS based on Android 13',
+          'Dual stereo speakers',
+          '5G connectivity',
+        ],
+      },
+      {
+        img: lapsvg,
+        title: 'Samsung Galaxy Watch 5 Pro',
+        orgPrice: '44,999',
+        price: '39,999',
+        Discount: '11% off',
+        features: [
+          '1.4-inch AMOLED display with Sapphire Glass',
+          'BioActive Sensor for health tracking',
+          'GPS with Route Tracking',
+          'Up to 80 hours battery life',
+          '5ATM + IP68 water resistance',
+          'Wireless fast charging',
+          'Wear OS powered by Samsung',
+        ],
+      },
+      {
+        img: lapsvg,
+        title: 'Anker PowerCore 20000mAh Power Bank',
+        orgPrice: '5,499',
+        price: '3,999',
+        Discount: '27% off',
+        features: [
+          '20000mAh high-capacity battery',
+          'PowerIQ and VoltageBoost for fast charging',
+          'Dual USB-A output',
+          'Compact and lightweight design',
+          'Trickle-charging mode for smaller devices',
+          'MultiProtect safety system',
+          'Micro-USB and USB-C input',
+        ],
+      },
+      {
+        img: lapsvg,
+        title: 'Samsung 25W USB-C Super Fast Charger',
+        orgPrice: '₹2,999',
+        price: '₹1,999',
+        Discount: '33% off',
+        features: [
+          '25W Super Fast Charging with USB-C PD 3.0',
+          'Compatible with multiple devices',
+          'Compact and travel-friendly design',
+          'Overcurrent and overvoltage protection',
+          'Universal voltage support (100V-240V)',
+          'Detachable USB-C to USB-C cable',
+          'Lightweight and durable build',
+          'Certified safety compliance',
+        ],
+      },
+    ],
   },
 ];
 
@@ -640,42 +941,24 @@ export default function Sect() {
               <h1>{info.head}</h1>
             </div>
             <div className={styles.tccItems}>
-              <div className={styles.tccAllItems1}>
-                <Image src={lapsvg} alt='4item' className={styles.Fouritems} />
-                <div className={styles.tccItemTitle}>{info.title1}</div>
-                <div className={styles.tccItemDes}>
-                  <p className={styles.pPrt1}>{info.OrgPrice1}</p>
-                  <h3>{info.DisPrice1}</h3>
-                  <p className={styles.pPrt2}>{info.Dis1}</p>
+              {info.items.map((item, idx) => (
+                <div
+                  key={idx}
+                  className={styles.tccAllItems}
+                  onClick={() => handleClick(item)}>
+                  <Image
+                    src={item.img}
+                    alt='4item'
+                    className={styles.Fouritems}
+                  />
+                  <div className={styles.tccItemTitle}>{item.title}</div>
+                  <div className={styles.tccItemDes}>
+                    <p className={styles.pPrt1}>{item.orgPrice}</p>
+                    <h3>{item.price}</h3>
+                    <p className={styles.pPrt2}>{item.Discount}</p>
+                  </div>
                 </div>
-              </div>
-              <div className={styles.tccAllItems2}>
-                <Image src={lapsvg} alt='4item' className={styles.Fouritems} />
-                <div className={styles.tccItemTitle}>{info.title2}</div>
-                <div className={styles.tccItemDes}>
-                  <p className={styles.pPrt1}>{info.OrgPrice2}</p>
-                  <h3>{info.DisPrice2}</h3>
-                  <p className={styles.pPrt2}>{info.Dis2}</p>
-                </div>
-              </div>
-              <div className={styles.tccAllItems3}>
-                <Image src={lapsvg} alt='4item' className={styles.Fouritems} />
-                <div className={styles.tccItemTitle}>{info.title3}</div>
-                <div className={styles.tccItemDes}>
-                  <p className={styles.pPrt1}>{info.OrgPrice3}</p>
-                  <h3>{info.DisPrice3}</h3>
-                  <p className={styles.pPrt2}>{info.Dis3}</p>
-                </div>
-              </div>
-              <div className={styles.tccAllItems4}>
-                <Image src={lapsvg} alt='4item' className={styles.Fouritems} />
-                <div className={styles.tccItemTitle}>{info.title4}</div>
-                <div className={styles.tccItemDes}>
-                  <p className={styles.pPrt1}>{info.OrgPrice4}</p>
-                  <h3>{info.DisPrice4}</h3>
-                  <p className={styles.pPrt2}>{info.Dis4}</p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         ))}

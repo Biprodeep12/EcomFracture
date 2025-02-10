@@ -313,13 +313,12 @@
 }
 .tccItems {
   display: grid;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: 50% 50%;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  padding: 15px;
+  gap: 10px;
 }
-.tccAllItems1,
-.tccAllItems2,
-.tccAllItems3,
-.tccAllItems4 {
+.tccAllItems {
   border: 1px solid #ccc;
   display: flex;
   flex-direction: column;
@@ -327,18 +326,7 @@
   align-items: center;
   gap: 10px;
 }
-.tccAllItems1 {
-  margin: 10px 5px 5px 15px;
-}
-.tccAllItems2 {
-  margin: 10px 15px 5px 5px;
-}
-.tccAllItems3 {
-  margin: 5px 5px 15px 15px;
-}
-.tccAllItems4 {
-  margin: 5px 15px 15px 5px;
-}
+
 .Fouritems {
   width: 160px;
   height: 160px;

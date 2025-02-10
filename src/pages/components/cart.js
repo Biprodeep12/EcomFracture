@@ -11,6 +11,7 @@ export default function Cart() {
   const [user, setUser] = useState(null);
   const [cartItems, setCartItems] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [confirm, setConfirm] = useState(false);
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(async (currentUser) => {
@@ -218,10 +219,43 @@ export default function Cart() {
                     <h4>₹{totalAmount.toLocaleString()}</h4>
                   </div>
                 </div>
+                <div className={styles.checkout}>
+                  <button
+                    className={styles.checkoutBtn}
+                    onClick={() => setConfirm(true)}>
+                    PLACE ORDER
+                  </button>
+                </div>
               </div>
             </div>
           )}
         </div>
+        {confirm && (
+          <div className={styles.confirmBk}>
+            <div className={styles.confirm}>
+              <div className={styles.items}>
+                {cartItems.map((item, index) => (
+                  <div key={index} className={styles.itemsINd}>
+                    <h4>{item.title}</h4>
+                    <p>₹{item.price}</p>
+                  </div>
+                ))}
+              </div>
+              <div className={styles.totalAm}>
+                <p>Total Items: {cartItems.length}</p>
+                <p>Total Amount: ₹{totalAmount.toLocaleString()}</p>
+              </div>
+              <div className={styles.btnDiv}>
+                <button
+                  className={styles.cancelBtn}
+                  onClick={() => setConfirm(false)}>
+                  Cancel
+                </button>
+                <button className={styles.confirmBtn}>Confirm Purchase</button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </>
   );
