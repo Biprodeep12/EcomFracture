@@ -154,7 +154,6 @@ export default function ClickedItems() {
       };
 
       if (isLiked) {
-        // Remove item from wishlist
         updatedWishlist = updatedWishlist.filter(
           (wishItem) => wishItem.title !== title,
         );
@@ -162,13 +161,34 @@ export default function ClickedItems() {
         setIsLiked(false);
         alert('Item removed from Wishlist');
       } else {
-        // Add item to wishlist
         await updateDoc(userRef, { wishlist: arrayUnion(item) });
         setIsLiked(true);
         alert('Item added to Wishlist');
       }
     } catch (err) {
       console.error('Error updating wishlist:', err);
+    }
+  };
+
+  const handleShare = async () => {
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: title || 'Check this out!',
+          text: `Check out this product: ${title} at ₹${price}`,
+          url: window.location.href,
+        });
+        console.log('Item shared successfully');
+      } catch (error) {
+        console.error('Error sharing:', error);
+      }
+    } else {
+      try {
+        await navigator.clipboard.writeText(window.location.href);
+        alert('Link copied to clipboard!');
+      } catch (error) {
+        console.error('Could not copy text:', error);
+      }
     }
   };
 
@@ -195,7 +215,7 @@ export default function ClickedItems() {
                     className={styles.likeTP}
                   />
                 </div>
-                <div className={styles.likeshare}>
+                <div className={styles.likeshare} onClick={handleShare}>
                   <Image src={share} alt='share' className={styles.shareTP} />
                 </div>
               </div>
