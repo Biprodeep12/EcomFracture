@@ -1,0 +1,148 @@
+.checkCont {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.checkEnd {
+  margin-top: 75px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.productCont {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.product {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  width: 100%;
+  max-width: 600px;
+  border-radius: 10px;
+  padding: 20px;
+  height: 80%;
+}
+.prodImg {
+  height: 200px;
+  width: 200px;
+  padding: 10px;
+}
+.prodDes {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-left: 10px;
+}
+.prodDes h2:hover {
+  color: blue;
+}
+.prodPrice {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 7px;
+}
+.orgPrice {
+  font-weight: 600;
+  color: #939393;
+  text-decoration: line-through;
+}
+.cartCount {
+  width: 350px;
+  max-height: 230px;
+  border-radius: 10px;
+  background-color: white;
+  display: grid;
+  grid-template-rows: 25% 75%;
+  padding-bottom: 35px;
+  position: relative;
+  margin-bottom: 100px;
+}
+.cartContHead {
+  padding-left: 20px;
+  align-self: center;
+  justify-self: left;
+}
+.cartContPrice {
+  border-top: 1px solid #ccc;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 10px 15px;
+}
+.priceName {
+  align-self: center;
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  text-wrap: nowrap;
+  gap: 20px;
+}
+.priceAmount {
+  justify-self: right;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  font-size: 20px;
+  text-wrap: nowrap;
+  gap: 20px;
+}
+.disPrice,
+.devPrice {
+  color: green;
+}
+.checkout {
+  position: absolute;
+  left: 50%;
+  translate: -50%;
+  bottom: -70px;
+  background-color: white;
+}
+.checkoutBtn {
+  background-color: rgb(255, 140, 57);
+  color: white;
+  font-weight: 600;
+  font-size: 20;
+  border: none;
+  text-wrap: nowrap;
+  padding: 10px 40px;
+  margin: 10px;
+  cursor: pointer;
+}
+.load {
+  position: absolute;
+  left: 50%;
+  translate: -50%;
+  top: 200px;
+  font-size: 30px;
+}
+@media screen and (max-width: 980px) {
+  .productCont {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 980px) {
+  .prodDes h2 {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 460px) {
+  .product {
+    border-radius: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .cartCount {
+    margin-bottom: 200px;
+  }
+  .prodImg {
+    height: 200px;
+  }
+}

@@ -59,6 +59,10 @@ export default function ClickedItems() {
   const router = useRouter();
   const { title, price, orgPrice, image, features } = router.query;
   const [isLiked, setIsLiked] = useState(false);
+  const [wishlistAlert, setWishlistAlert] = useState({
+    show: false,
+    message: '',
+  });
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((currentUser) => {
@@ -159,12 +163,13 @@ export default function ClickedItems() {
         );
         await updateDoc(userRef, { wishlist: updatedWishlist });
         setIsLiked(false);
-        alert('Item removed from Wishlist');
+        setWishlistAlert({ show: true, message: 'Item removed from Wishlist' });
       } else {
         await updateDoc(userRef, { wishlist: arrayUnion(item) });
         setIsLiked(true);
-        alert('Item added to Wishlist');
+        setWishlistAlert({ show: true, message: 'Item added to Wishlist' });
       }
+      setTimeout(() => setWishlistAlert({ show: false, message: '' }), 2000);
     } catch (err) {
       console.error('Error updating wishlist:', err);
     }
@@ -190,6 +195,19 @@ export default function ClickedItems() {
         console.error('Could not copy text:', error);
       }
     }
+  };
+
+  const handleCheck = (title, price, orgPrice, image, features) => {
+    router.push({
+      pathname: '/checkPage',
+      query: {
+        title,
+        price,
+        orgPrice,
+        image,
+        features,
+      },
+    });
   };
 
   return (
@@ -223,7 +241,13 @@ export default function ClickedItems() {
                 <div className={styles.addCart} onClick={handleAddToCart}>
                   Add to Cart
                 </div>
-                <div className={styles.buyNow}>Buy Now</div>
+                <div
+                  className={styles.buyNow}
+                  onClick={() =>
+                    handleCheck(title, price, orgPrice, image, features)
+                  }>
+                  Buy Now
+                </div>
               </div>
             </div>
             <div className={styles.descri}>
@@ -287,14 +311,20 @@ export default function ClickedItems() {
         <div className={styles.mobAddCart} onClick={handleAddToCart}>
           Add to Cart
         </div>
-        <div className={styles.mobBuyNow}>Buy Now</div>
+        <div
+          className={styles.mobBuyNow}
+          onClick={() => handleCheck(title, price, orgPrice, image, features)}>
+          Buy Now
+        </div>
       </div>
-      <div className={styles.popAlert}>
-        <h2>
-          <CheckCircle size={23} className={styles.alertIcon} />
-          Item Added To Cart
-        </h2>
-      </div>
+      {wishlistAlert.show && (
+        <div className={`${styles.popAlert} ${styles.showAlert}`}>
+          <h2>
+            <CheckCircle size={23} className={styles.alertIcon} />
+            {wishlistAlert.message}
+          </h2>
+        </div>
+      )}
     </>
   );
 }

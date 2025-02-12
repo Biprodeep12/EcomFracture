@@ -110,6 +110,19 @@ export default function Cart() {
     });
   };
 
+  const handleCheck = (item) => {
+    router.push({
+      pathname: '/checkPage',
+      query: {
+        title: item.title,
+        price: item.price,
+        orgPrice: item.orgPrice,
+        image: item.image,
+        features: item.features,
+      },
+    });
+  };
+
   if (loading) {
     return <div className={styles.loading}>Loading...</div>;
   }
@@ -188,12 +201,18 @@ export default function Cart() {
                           <Plus size={16} />
                         </button>
                       </div>
-
-                      <button
-                        className={styles.removeBtn}
-                        onClick={() => handleRemove(item)}>
-                        Remove
-                      </button>
+                      <div className={styles.twoBtn}>
+                        <button
+                          className={styles.removeBtn}
+                          onClick={() => handleRemove(item)}>
+                          Remove
+                        </button>
+                        <button
+                          className={styles.buyBtn}
+                          onClick={() => handleCheck(item)}>
+                          Buy Now
+                        </button>
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -223,7 +242,7 @@ export default function Cart() {
                   <button
                     className={styles.checkoutBtn}
                     onClick={() => setConfirm(true)}>
-                    PLACE ORDER
+                    <h4> PLACE ORDER</h4>
                   </button>
                 </div>
               </div>
@@ -251,7 +270,9 @@ export default function Cart() {
                   onClick={() => setConfirm(false)}>
                   Cancel
                 </button>
-                <button className={styles.confirmBtn}>Confirm Purchase</button>
+                <button className={styles.confirmBtn}>
+                  Proceed to Payment
+                </button>
               </div>
             </div>
           </div>

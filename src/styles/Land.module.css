@@ -276,49 +276,33 @@
   width: 30px;
   height: 30px;
 }
+
 .popAlert {
   position: fixed;
-  bottom: -50px;
+  bottom: 10%;
   left: 50%;
-  translate: -50%;
-  background-color: white;
-  padding: 0 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  text-align: center;
-  z-index: 50;
-  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.5);
+  transform: translateX(-50%);
+  background-color: #4caf50;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: bold;
   display: flex;
-  flex-direction: row;
   align-items: center;
-  justify-content: center;
-  height: 50px;
+  gap: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
-.alertIcon {
-  margin-right: 10px;
+.fadeIn {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-10px);
 }
-.popup {
-  animation: alert 0.5s ease-in-out forwards;
+.fadeOut {
+  opacity: 0;
+  transform: translateX(-50%) translateY(10px);
 }
-.popdown {
-  animation: rest 0.5s ease-in-out forwards;
-}
-@keyframes alert {
-  from {
-    bottom: -50px;
-  }
-  to {
-    bottom: 60px;
-  }
-}
-@keyframes rest {
-  from {
-    bottom: 60px;
-  }
-  to {
-    bottom: -50px;
-  }
-}
+
 @media screen and (max-width: 1130px) {
   .sec2 {
     grid-template-columns: 1fr;
