@@ -357,7 +357,7 @@
   .removeBtn {
     margin: 0;
   }
-  .btnDiv {
-    flex-direction: column;
+  .twoBtn {
+    margin-left: -100px;
   }
 }
