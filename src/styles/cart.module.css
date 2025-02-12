@@ -357,4 +357,7 @@
   .removeBtn {
     margin: 0;
   }
+  .btnDiv {
+    flex-direction: column;
+  }
 }
