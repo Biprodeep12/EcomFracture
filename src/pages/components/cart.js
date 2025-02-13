@@ -123,6 +123,13 @@ export default function Cart() {
     });
   };
 
+  const handlePay = (total) => {
+    router.push({
+      pathname: '/payPage',
+      query: { price: total },
+    });
+  };
+
   if (loading) {
     return <div className={styles.loading}>Loading...</div>;
   }
@@ -270,7 +277,9 @@ export default function Cart() {
                   onClick={() => setConfirm(false)}>
                   Cancel
                 </button>
-                <button className={styles.confirmBtn}>
+                <button
+                  className={styles.confirmBtn}
+                  onClick={() => handlePay(totalAmount.toLocaleString())}>
                   Proceed to Payment
                 </button>
               </div>

@@ -10,4 +10,173 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 20px;
+}
+.amountPay {
+  background-color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+.paytainer {
+  background-color: white;
+  padding: 30px 10px 10px 10px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 650px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  align-items: center;
+  gap: 20px;
+}
+.mode {
+  display: flex;
+  flex-direction: row;
+  gap: 2px;
+  background-color: #e3e3e3;
+  border: 1px solid #ccc;
+  padding: 2px;
+  border-radius: 5px;
+  color: #5e5b5b;
+}
+.modep {
+  padding: 5px;
+  border-radius: 5px;
+  min-width: 150px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+}
+.modeAct {
+  background-color: white;
+  border: 1px solid #ccc;
+  color: black;
+}
+.formCard {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 35px 10px 35px;
+  gap: 7px;
+}
+.formCard label {
+  font-size: 17px;
+}
+.formCard input {
+  width: 100%;
+  height: 35px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 17px;
+  padding-left: 10px;
+  margin-bottom: 5px;
+}
+.expCvv {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.exp,
+.cvv {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.payBtn {
+  margin: 10px 0;
+  padding: 10px;
+  border: none;
+  background-color: rgb(0, 81, 255);
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.payBtn:hover {
+  background-color: rgb(106, 106, 239);
+}
+.formCard p {
+  color: #939393;
+}
+.payDiv {
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+  gap: 10px;
+}
+.payDiv h4 {
+  margin: 10px 0 20px 0;
+}
+.payDiv h4,
+.payDiv h3,
+.payDiv p {
+  text-align: center;
+}
+.payDiv button {
+  padding: 10px;
+  border: none;
+  background-color: rgb(0, 81, 255);
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.payDiv button:hover {
+  background-color: rgb(106, 106, 239);
+}
+.payDiv p {
+  margin: 30px 0 10px 0;
+  color: #939393;
+  text-align: center;
+}
+.cashDiv {
+  width: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.otp {
+  padding: 10px;
+  background-color: #d5d5d5;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 30px;
+}
+.cashDiv h4 {
+  text-align: center;
+}
+.cashDiv button {
+  padding: 10px;
+  border: none;
+  background-color: rgb(0, 81, 255);
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+.cashDiv p {
+  margin: 10px 0;
+  color: #939393;
+  text-align: center;
+}
+.cashDiv button:hover {
+  background-color: rgb(106, 106, 239);
+}
+@media screen and (max-width: 460px) {
+  .mode {
+    flex-direction: column;
+  }
+  .expCvv {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+  }
+  .formCard {
+    padding: 0 25px 10px 25px;
+  }
+  .paytainer {
+    margin-bottom: 100px;
+  }
 }

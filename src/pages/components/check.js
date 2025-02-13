@@ -18,6 +18,14 @@ export default function Check() {
       },
     });
   };
+
+  const handlePay = (price) => {
+    router.push({
+      pathname: '/payPage',
+      query: { price },
+    });
+  };
+
   if (!router.isReady) return <p className={styles.load}>Loading...</p>;
 
   return (
@@ -83,8 +91,7 @@ export default function Check() {
               <div className={styles.checkout}>
                 <button
                   className={styles.checkoutBtn}
-                  //   onClick={() => setConfirm(true)}
-                >
+                  onClick={() => handlePay(price)}>
                   <h4> Proceed to Payment</h4>
                 </button>
               </div>

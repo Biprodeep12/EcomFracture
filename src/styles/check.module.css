@@ -52,7 +52,7 @@
   text-decoration: line-through;
 }
 .cartCount {
-  width: 350px;
+  min-width: 350px;
   max-height: 230px;
   border-radius: 10px;
   background-color: white;
