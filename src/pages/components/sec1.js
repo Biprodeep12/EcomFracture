@@ -49,7 +49,7 @@ import Trend13 from '@/ProdutImages/asusZep.webp';
 import Trend14 from '@/ProdutImages/lenovoLegPro.webp';
 import Trend15 from '@/ProdutImages/hpSpec.webp';
 
-const sec2Cont1 = [
+export const sec2Cont1 = [
   {
     img: Samsug,
     title: 'Samsung Crystal UHD 4K TV',
@@ -159,7 +159,7 @@ const sec2Cont1 = [
     ],
   },
 ];
-const sec2Cont2 = [
+export const sec2Cont2 = [
   {
     img: ColWard,
     title: 'Modern Collapsible Wardrobe',
@@ -269,12 +269,12 @@ const sec2Cont2 = [
     ],
   },
 ];
-const prodColumn = [
+export const prodColumn = [
   {
     head: 'Recommended Items',
     items: [
       {
-        img: lapsvg,
+        img: 'https://rukminim2.flixcart.com/image/612/612/l1dwknk0/headphone/8/m/r/wh-1000xm4-sony-original-imagcywfzfwjmvbr.jpeg?q=70',
         title: 'Sony WH-1000XM5 Noise Cancelling Headphones',
         orgPrice: '29,999',
         price: '25,999',
@@ -290,7 +290,7 @@ const prodColumn = [
         ],
       },
       {
-        img: lapsvg,
+        img: 'https://rukminim2.flixcart.com/image/312/312/xif0q/computer/2/v/v/-original-imagfdeqter4sj2j.jpeg?q=70',
         title: 'Apple MacBook Air M2 Chip - 13.6-inch',
         orgPrice: '1,14,900',
         price: '1,05,900',
@@ -306,7 +306,7 @@ const prodColumn = [
         ],
       },
       {
-        img: lapsvg,
+        img: 'https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/i/5/1/-original-imagzm8pvabtmeys.jpeg?q=70',
         title: 'Samsung Galaxy S23 Ultra 5G',
         orgPrice: '1,24,999',
         price: '1,09,999',
@@ -322,7 +322,7 @@ const prodColumn = [
         ],
       },
       {
-        img: lapsvg,
+        img: 'https://rukminim2.flixcart.com/image/612/612/xif0q/headphone/y/p/d/getto-neckband-gaming-earbuds-true-wireless-bluetooth-headset-original-imah4hufcerqzmmt.jpeg?q=70',
         title: 'boAt Airdopes 141 Wireless Earbuds',
         orgPrice: '4,499',
         price: '1,299',
@@ -343,7 +343,7 @@ const prodColumn = [
     head: 'More to Explore',
     items: [
       {
-        img: lapsvg,
+        img: 'https://rukminim2.flixcart.com/image/312/312/xif0q/computer/d/j/m/g614ju-n3200ws-gaming-laptop-asus-original-imah4bjd8gfzvxgn.jpeg?q=70',
         title: 'Asus ROG Strix G16 Gaming Laptop',
         orgPrice: '1,29,990',
         price: '1,09,990',
@@ -359,7 +359,7 @@ const prodColumn = [
         ],
       },
       {
-        img: lapsvg,
+        img: 'https://rukminim2.flixcart.com/image/312/312/xif0q/sports-action-camera/l/f/q/hero13-special-bundle-na-2-27-27-hero13-special-bundle-gopro-original-imah4cgaxkjfevsg.jpeg?q=70',
         title: 'GoPro HERO12 Black Action Camera',
         orgPrice: '45,000',
         price: '39,500',
@@ -375,7 +375,7 @@ const prodColumn = [
         ],
       },
       {
-        img: lapsvg,
+        img: 'https://rukminim2.flixcart.com/image/612/612/l4zxn680/mouse/a/8/i/-original-imagfrkfgkk87x3x.jpeg?q=70',
         title: 'Logitech MX Master 3S Wireless Mouse',
         orgPrice: '10,999',
         price: '8,999',
@@ -391,7 +391,7 @@ const prodColumn = [
         ],
       },
       {
-        img: lapsvg,
+        img: 'https://rukminim2.flixcart.com/image/612/612/xif0q/cases-covers/flip-cover/0/p/k/ea16-magnetic-lock-flip-cover-protective-stand-case-for-amazon-original-imah3ntvnptvztff.jpeg?q=70',
         title: 'Kindle Paperwhite 11th Gen',
         orgPrice: '13,999',
         price: '11,499',
@@ -412,7 +412,7 @@ const prodColumn = [
     head: 'Top Selection',
     items: [
       {
-        img: lapsvg,
+        img: 'https://rukminim2.flixcart.com/image/312/312/xif0q/television/t/0/o/-original-imahy9qy7uzccppq.jpeg?q=70',
         title: 'Samsung The Frame 55-inch QLED 4K TV',
         orgPrice: '1,29,990',
         price: '89,990',
@@ -428,7 +428,7 @@ const prodColumn = [
         ],
       },
       {
-        img: lapsvg,
+        img: 'https://rukminim2.flixcart.com/image/612/612/xif0q/gamingconsole/o/4/2/-original-imah6s5eshwgbvxt.jpeg?q=70',
         title: 'Sony PlayStation 5 Console',
         orgPrice: '54,990',
         price: '49,990',
@@ -444,7 +444,7 @@ const prodColumn = [
         ],
       },
       {
-        img: lapsvg,
+        img: 'https://rukminim2.flixcart.com/image/312/312/xif0q/dslr-camera/r/f/k/z-50-20-9-z-50-nikon-original-imah3g87339tyurz.jpeg?q=70',
         title: 'Nikon Z50 Mirrorless Camera',
         orgPrice: '99,995',
         price: '89,995',
@@ -460,7 +460,7 @@ const prodColumn = [
         ],
       },
       {
-        img: lapsvg,
+        img: 'https://rukminim2.flixcart.com/image/612/612/xif0q/speaker/y/v/7/-original-imahygfhbzzc4asf.jpeg?q=70',
         title: 'Bose SoundLink Revolve+ Bluetooth Speaker',
         orgPrice: '29,999',
         price: '24,999',
@@ -481,7 +481,7 @@ const prodColumn = [
     head: 'Suggested for You',
     items: [
       {
-        img: lapsvg,
+        img: 'https://rukminim2.flixcart.com/image/312/312/xif0q/computer/k/i/f/-original-imah4qscfq3ddvc7.jpeg?q=70',
         title: 'HP Pavilion x360 Touchscreen Laptop',
         orgPrice: '74,999',
         price: '67,999',
@@ -497,7 +497,7 @@ const prodColumn = [
         ],
       },
       {
-        img: lapsvg,
+        img: 'https://rukminim2.flixcart.com/image/312/312/l0jwbrk0/tablet/h/i/3/-original-imagcbjrkffdzqrz.jpeg?q=70',
         title: 'Apple iPad Air (5th Gen, Wi-Fi, 64GB)',
         orgPrice: '59,900',
         price: '54,900',
@@ -513,7 +513,7 @@ const prodColumn = [
         ],
       },
       {
-        img: lapsvg,
+        img: 'https://rukminim2.flixcart.com/image/612/612/xif0q/speaker/1/z/h/-original-imahy8hmksac6wzm.jpeg?q=70',
         title: 'JBL PartyBox 310 Portable Speaker',
         orgPrice: '44,999',
         price: '39,999',
@@ -529,7 +529,7 @@ const prodColumn = [
         ],
       },
       {
-        img: lapsvg,
+        img: 'https://rukminim2.flixcart.com/image/312/312/l5fnhjk0/dslr-camera/g/t/7/eos-r10-24-2-r10-canon-original-imagg4y52cybasdr.jpeg?q=70',
         title: 'Canon EOS R10 Mirrorless Camera',
         orgPrice: '84,995',
         price: '79,995',
@@ -550,7 +550,7 @@ const prodColumn = [
     head: 'Trending in Laptops',
     items: [
       {
-        img: lapsvg,
+        img: 'https://rukminim2.flixcart.com/image/312/312/jk01bww0/computer/x/5/z/dell-na-thin-and-light-laptop-original-imaf7fy9v5sbfsxp.jpeg?q=70',
         title: 'Dell XPS 13 OLED Laptop',
         orgPrice: '1,49,990',
         price: '1,29,990',
@@ -566,7 +566,7 @@ const prodColumn = [
         ],
       },
       {
-        img: lapsvg,
+        img: 'https://rukminim2.flixcart.com/image/312/312/xif0q/computer/i/u/f/-original-imahyrjxnsxvzvk3.jpeg?q=70',
         title: 'Lenovo Legion 5 Pro Gaming Laptop',
         orgPrice: '1,69,990',
         price: '1,49,990',
@@ -582,7 +582,7 @@ const prodColumn = [
         ],
       },
       {
-        img: lapsvg,
+        img: 'https://rukminim2.flixcart.com/image/312/312/xif0q/computer/o/x/l/-original-imah2pfgbzhu4ebg.jpeg?q=70',
         title: 'Microsoft Surface Laptop Studio',
         orgPrice: '2,09,999',
         price: '1,89,999',
@@ -598,7 +598,7 @@ const prodColumn = [
         ],
       },
       {
-        img: lapsvg,
+        img: 'https://rukminim2.flixcart.com/image/312/312/xif0q/computer/v/c/k/an515-58-gaming-laptop-acer-original-imah2mwgfpvgzggn.jpeg?q=70',
         title: 'Acer Nitro 5 Gaming Laptop',
         orgPrice: '89,999',
         price: '79,999',
@@ -619,7 +619,7 @@ const prodColumn = [
     head: 'Recommended for You',
     items: [
       {
-        img: lapsvg,
+        img: 'https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/p/r/b/nord-ce-3-lite-5g-ce2099-oneplus-original-imagzj42cctpjjze.jpeg?q=70',
         title: 'OnePlus Nord CE 3 Lite 5G',
         orgPrice: '21,999',
         price: '19,999',
@@ -635,7 +635,7 @@ const prodColumn = [
         ],
       },
       {
-        img: lapsvg,
+        img: 'https://rukminim2.flixcart.com/image/612/612/xif0q/smartwatch/e/e/p/-original-imah8mtwtmmxa47x.jpeg?q=70',
         title: 'Samsung Galaxy Watch 5 Pro',
         orgPrice: '44,999',
         price: '39,999',
@@ -651,7 +651,7 @@ const prodColumn = [
         ],
       },
       {
-        img: lapsvg,
+        img: 'https://rukminim2.flixcart.com/image/612/612/xif0q/power-bank/9/v/q/-original-imah45hcehgxzmnk.jpeg?q=70',
         title: 'Anker PowerCore 20000mAh Power Bank',
         orgPrice: '5,499',
         price: '3,999',
@@ -667,10 +667,10 @@ const prodColumn = [
         ],
       },
       {
-        img: lapsvg,
+        img: 'https://rukminim2.flixcart.com/image/612/612/xif0q/battery-charger/6/a/o/33w-3a-dash-vooc-superdart-charger-adaptor-with-type-c-cable-original-imah7n5s84sukyvv.jpeg?q=70',
         title: 'Samsung 25W USB-C Super Fast Charger',
-        orgPrice: '₹2,999',
-        price: '₹1,999',
+        orgPrice: '2,999',
+        price: '1,999',
         Discount: '33% off',
         features: [
           '25W Super Fast Charging with USB-C PD 3.0',
@@ -683,6 +683,286 @@ const prodColumn = [
           'Certified safety compliance',
         ],
       },
+    ],
+  },
+];
+export const colm1 = [
+  {
+    img: Trend1,
+    title:
+      'Sony Bravia 55-inch 4K Ultra HD Smart LED TV with Google TV, Dolby Vision, and 120Hz Refresh Rate',
+    price: '52,000',
+    orgPrice: '65,000',
+    features: [
+      '55-inch 4K Ultra HD display with HDR10 support',
+      'Google TV with voice assistant and app store',
+      'Dolby Vision and Dolby Atmos for immersive experience',
+      '120Hz refresh rate for smooth motion',
+      'Multiple HDMI and USB ports for connectivity',
+      'Built-in Chromecast and Apple AirPlay support',
+      'Slim bezel design with metal stand',
+      'Wi-Fi 6 and Bluetooth 5.2 for seamless connectivity',
+    ],
+  },
+  {
+    img: Trend2,
+    title:
+      'Apple iPhone 14 Pro Max (128GB) - Space Black with A16 Bionic Chip, ProMotion Display',
+    price: '1,14,000',
+    orgPrice: '1,30,000',
+    features: [
+      '6.7-inch Super Retina XDR display with ProMotion technology',
+      '120Hz adaptive refresh rate for ultra-smooth scrolling',
+      '48MP main camera with advanced computational photography',
+      'A16 Bionic chip for superior performance and efficiency',
+      'Crash detection and emergency SOS via satellite',
+      'All-day battery life with fast charging support',
+      'iOS 16 with new lock screen customization',
+      'IP68 water and dust resistance for durability',
+      '5G connectivity for ultra-fast downloads and streaming',
+    ],
+  },
+  {
+    img: Trend3,
+    title:
+      'Dell Inspiron 14 Ryzen 7 (16GB RAM/512GB SSD) Laptop with Windows 11, Full HD Display, and Backlit Keyboard',
+    price: '65,000',
+    orgPrice: '78,000',
+    features: [
+      'AMD Ryzen 7 5700U processor with 8 cores and 16 threads',
+      '14-inch Full HD anti-glare display with vibrant colors',
+      '16GB DDR4 RAM for multitasking efficiency',
+      '512GB NVMe SSD for lightning-fast storage',
+      'Windows 11 Home pre-installed for seamless experience',
+      'Backlit keyboard with fingerprint sensor for security',
+      'Wi-Fi 6 and Bluetooth 5.2 support',
+      'Integrated AMD Radeon graphics for casual gaming',
+      'Lightweight aluminum chassis for portability',
+    ],
+  },
+  {
+    img: Trend4,
+    title:
+      'Samsung Galaxy Watch 5 Pro LTE (45mm) - Black Titanium Smartwatch with Sapphire Glass, ECG, and Sleep Tracking',
+    price: '34,000',
+    orgPrice: '42,000',
+    features: [
+      '1.4-inch Super AMOLED always-on display',
+      'Titanium case with sapphire crystal glass for durability',
+      'Advanced sleep tracking and body composition analysis',
+      'ECG and blood pressure monitoring for health insights',
+      'LTE connectivity for calls, messages, and apps',
+      'Google Assistant & Samsung Pay for convenience',
+      'Up to 80-hour battery life on a single charge',
+      'Military-grade durability with IP68 rating',
+      'Built-in GPS for outdoor activities and workouts',
+    ],
+  },
+  {
+    img: Trend5,
+    title:
+      'JBL PartyBox 310 Bluetooth Party Speaker with 240W Power, Bass Boost, Dynamic Light Show, and Built-in Mic Inputs',
+    price: '29,999',
+    orgPrice: '35,000',
+    features: [
+      '240W powerful JBL sound with deep bass',
+      'Dynamic light show that syncs with the music',
+      '18-hour battery life for all-day partying',
+      'Built-in mic and guitar inputs for live performances',
+      'Splashproof design (IPX4) for outdoor use',
+      'Bluetooth, USB, and AUX connectivity',
+      'Dual speaker pairing for stereo sound',
+      'Wheels and handle for easy portability',
+      'Customizable EQ settings via JBL app',
+    ],
+  },
+];
+export const colm2 = [
+  {
+    img: Trend6,
+    title:
+      'ASUS ROG Strix G16 Gaming Laptop with Intel Core i9, NVIDIA RTX 4060, 16GB RAM, 1TB SSD, and 165Hz Display',
+    price: '1,29,000',
+    orgPrice: '1,45,000',
+    features: [
+      '16-inch Full HD IPS display with 165Hz refresh rate',
+      'Intel Core i9-13900H processor for extreme gaming performance',
+      'NVIDIA GeForce RTX 4060 with 8GB GDDR6 VRAM',
+      '16GB DDR5 RAM for smooth multitasking',
+      '1TB PCIe Gen4 SSD for ultra-fast load times',
+      'RGB-backlit keyboard with customizable lighting',
+      'AI-powered cooling with liquid metal thermal compound',
+      'Wi-Fi 6E and Bluetooth 5.3 for next-gen connectivity',
+      'Dolby Atmos surround sound with Hi-Res Audio',
+    ],
+  },
+  {
+    img: Trend7,
+    title:
+      'Samsung Galaxy Tab S9 Ultra 5G - 14.6-inch AMOLED, Snapdragon 8 Gen 2, 12GB RAM, 512GB Storage, S-Pen Included',
+    price: '99,000',
+    orgPrice: '1,15,000',
+    features: [
+      '14.6-inch Super AMOLED display with 120Hz refresh rate',
+      'Snapdragon 8 Gen 2 processor for flagship performance',
+      '12GB RAM and 512GB internal storage',
+      'S-Pen with ultra-low latency for precision writing',
+      'Dual rear cameras (13MP + 8MP) and 12MP front camera',
+      'IP68 water and dust resistance for durability',
+      'Massive 11200mAh battery with 45W fast charging',
+      'Samsung DeX mode for desktop-like multitasking',
+      'Wi-Fi 6 and 5G connectivity for high-speed browsing',
+    ],
+  },
+  {
+    img: Trend8,
+    title:
+      'Bose QuietComfort Ultra Wireless Noise Cancelling Headphones with Spatial Audio and 24-Hour Battery Life',
+    price: '32,000',
+    orgPrice: '38,000',
+    features: [
+      'Advanced noise cancellation with custom modes',
+      'Bose Immersive Audio for spatial sound experience',
+      '24-hour battery life with quick charge support',
+      'Customizable EQ via Bose Music app',
+      'Bluetooth 5.3 for stable and efficient connectivity',
+      'Multipoint pairing to connect multiple devices',
+      'Soft protein leather ear cushions for all-day comfort',
+      'Touch and voice controls for easy operation',
+      'USB-C fast charging with 3.5mm wired option',
+    ],
+  },
+  {
+    img: Trend9,
+    title:
+      'Dyson V15 Detect Absolute Cordless Vacuum Cleaner with Laser Dust Detection, 60-Minute Runtime, and HEPA Filtration',
+    price: '63,000',
+    orgPrice: '75,000',
+    features: [
+      'Laser dust detection for revealing hidden particles',
+      'Powerful Hyperdymium motor with 230AW suction',
+      'Up to 60 minutes of runtime on eco mode',
+      'Advanced HEPA filtration traps 99.99% of dust',
+      'Auto-adjusting suction based on floor type',
+      'LCD screen displays real-time cleaning data',
+      'Click-in battery system for extended cleaning sessions',
+      'Includes multiple attachments for versatile cleaning',
+      'Lightweight and ergonomic design for easy handling',
+    ],
+  },
+  {
+    img: Trend10,
+    title:
+      'Garmin Fenix 7X Sapphire Solar Multisport GPS Smartwatch with AMOLED Display, 28-Day Battery, and Advanced Metrics',
+    price: '85,000',
+    orgPrice: '97,000',
+    features: [
+      '1.4-inch AMOLED display with always-on mode',
+      'Solar charging extends battery life up to 28 days',
+      'Multi-band GPS with precise tracking',
+      'VO2 max, recovery time, and advanced training metrics',
+      'Garmin Pay for contactless payments',
+      'Built-in music storage for offline listening',
+      '24/7 health monitoring with heart rate and SpO2 tracking',
+      '50m water resistance for swimming and outdoor use',
+      'Preloaded maps for hiking, skiing, and cycling',
+    ],
+  },
+];
+export const colm3 = [
+  {
+    img: Trend11,
+
+    title:
+      'Dell XPS 15 - (Intel Core i9 13th Gen/32GB RAM/1TB SSD/Windows 11/NVIDIA RTX 4060)',
+    price: '1,45,000',
+    orgPrice: '1,65,000',
+    features: [
+      '13th Gen Intel Core i9 Processor',
+      '32GB DDR5 RAM',
+      '1TB NVMe SSD',
+      '15.6-inch 4K OLED Touch Display',
+      'NVIDIA GeForce RTX 4060 8GB',
+      'Aluminum CNC Chassis',
+      'Thunderbolt 4 Ports',
+      'Wi-Fi 6E & Bluetooth 5.3',
+      'Backlit Keyboard with Fingerprint Sensor',
+    ],
+  },
+  {
+    img: Trend12,
+
+    title:
+      'Apple MacBook Pro M3 Max - (64GB RAM/2TB SSD/macOS) Liquid Retina XDR Display',
+    price: '3,99,000',
+    orgPrice: '4,20,000',
+    features: [
+      'M3 Max chip with 16-core CPU and 40-core GPU',
+      '64GB Unified Memory',
+      '2TB SSD Storage',
+      '16.2-inch Liquid Retina XDR Display',
+      'ProMotion Technology (120Hz Refresh Rate)',
+      '6-Speaker High-Fidelity Audio System',
+      'Thunderbolt 4, HDMI & SDXC Card Slot',
+      'macOS Sonoma with Advanced AI Features',
+      'MagSafe 3 Charging',
+    ],
+  },
+  {
+    img: Trend13,
+
+    title:
+      'ASUS ROG Zephyrus G16 - (Intel Core i7 14th Gen/32GB RAM/1TB SSD/Windows 11/NVIDIA RTX 4070)',
+    price: '1,89,000',
+    orgPrice: '2,10,000',
+    features: [
+      '14th Gen Intel Core i7 Processor',
+      '32GB DDR5 RAM (Expandable up to 64GB)',
+      '1TB PCIe Gen 4 SSD',
+      '16-inch QHD+ 240Hz IPS Display',
+      'NVIDIA GeForce RTX 4070 8GB',
+      'AI-enhanced Cooling System',
+      'Dolby Atmos Surround Sound',
+      'MUX Switch for GPU Performance Boost',
+      'Wi-Fi 6E & Bluetooth 5.2',
+    ],
+  },
+  {
+    img: Trend14,
+
+    title:
+      'Lenovo Legion 7 Pro - (AMD Ryzen 9 7945HX/32GB RAM/1TB SSD/Windows 11/NVIDIA RTX 4080) High-Performance Gaming Laptop (16 inch, Storm Gray, 2.3 Kg)',
+    price: '2,50,000',
+    orgPrice: '2,75,000',
+    features: [
+      'AMD Ryzen 9 7945HX 16-Core Processor',
+      '32GB DDR5 RAM (Expandable to 64GB)',
+      '1TB PCIe 4.0 SSD',
+      '16-inch Mini LED HDR Display (165Hz)',
+      'NVIDIA GeForce RTX 4080 12GB',
+      'Legion Coldfront 4.0 Cooling System',
+      'TrueStrike RGB Keyboard',
+      'Wi-Fi 6E & Ethernet 2.5Gbps',
+      'AI-Powered Battery Optimization',
+    ],
+  },
+  {
+    img: Trend15,
+
+    title:
+      'HP Spectre x360 - (Intel Core i7 13th Gen/16GB RAM/1TB SSD/Windows 11/Intel Iris Xe) 2-in-1 Convertible Laptop (14 inch, Nightfall Black, 1.3 Kg)',
+    price: '1,25,000',
+    orgPrice: '1,40,000',
+    features: [
+      '13th Gen Intel Core i7 Processor',
+      '16GB LPDDR5 RAM',
+      '1TB SSD NVMe Storage',
+      '14-inch OLED Touchscreen Display',
+      '360° Convertible Design',
+      'HP Sure View Privacy Screen',
+      'Bang & Olufsen Quad Speakers',
+      'Wi-Fi 6E & Bluetooth 5.3',
+      'HP Fast Charge (50% in 30 min)',
     ],
   },
 ];
@@ -805,7 +1085,7 @@ export default function Sect() {
         title: item.title,
         price: item.price,
         orgPrice: item.orgPrice,
-        image: item.img.src,
+        image: item.img.src ? item.img.src : item.img,
         features: item.features,
       },
     });
@@ -950,6 +1230,8 @@ export default function Sect() {
                     src={item.img}
                     alt='4item'
                     className={styles.Fouritems}
+                    width={300}
+                    height={300}
                   />
                   <div className={styles.tccItemTitle}>{item.title}</div>
                   <div className={styles.tccItemDes}>
@@ -990,97 +1272,7 @@ export default function Sect() {
       </div>
       <section className={styles.threeParal}>
         <div className={styles.tP1}>
-          {[
-            {
-              img: Trend1,
-              title:
-                'Sony Bravia 55-inch 4K Ultra HD Smart LED TV with Google TV, Dolby Vision, and 120Hz Refresh Rate',
-              price: '52,000',
-              orgPrice: '65,000',
-              features: [
-                '55-inch 4K Ultra HD display with HDR10 support',
-                'Google TV with voice assistant and app store',
-                'Dolby Vision and Dolby Atmos for immersive experience',
-                '120Hz refresh rate for smooth motion',
-                'Multiple HDMI and USB ports for connectivity',
-                'Built-in Chromecast and Apple AirPlay support',
-                'Slim bezel design with metal stand',
-                'Wi-Fi 6 and Bluetooth 5.2 for seamless connectivity',
-              ],
-            },
-            {
-              img: Trend2,
-              title:
-                'Apple iPhone 14 Pro Max (128GB) - Space Black with A16 Bionic Chip, ProMotion Display',
-              price: '1,14,000',
-              orgPrice: '1,30,000',
-              features: [
-                '6.7-inch Super Retina XDR display with ProMotion technology',
-                '120Hz adaptive refresh rate for ultra-smooth scrolling',
-                '48MP main camera with advanced computational photography',
-                'A16 Bionic chip for superior performance and efficiency',
-                'Crash detection and emergency SOS via satellite',
-                'All-day battery life with fast charging support',
-                'iOS 16 with new lock screen customization',
-                'IP68 water and dust resistance for durability',
-                '5G connectivity for ultra-fast downloads and streaming',
-              ],
-            },
-            {
-              img: Trend3,
-              title:
-                'Dell Inspiron 14 Ryzen 7 (16GB RAM/512GB SSD) Laptop with Windows 11, Full HD Display, and Backlit Keyboard',
-              price: '65,000',
-              orgPrice: '78,000',
-              features: [
-                'AMD Ryzen 7 5700U processor with 8 cores and 16 threads',
-                '14-inch Full HD anti-glare display with vibrant colors',
-                '16GB DDR4 RAM for multitasking efficiency',
-                '512GB NVMe SSD for lightning-fast storage',
-                'Windows 11 Home pre-installed for seamless experience',
-                'Backlit keyboard with fingerprint sensor for security',
-                'Wi-Fi 6 and Bluetooth 5.2 support',
-                'Integrated AMD Radeon graphics for casual gaming',
-                'Lightweight aluminum chassis for portability',
-              ],
-            },
-            {
-              img: Trend4,
-              title:
-                'Samsung Galaxy Watch 5 Pro LTE (45mm) - Black Titanium Smartwatch with Sapphire Glass, ECG, and Sleep Tracking',
-              price: '34,000',
-              orgPrice: '42,000',
-              features: [
-                '1.4-inch Super AMOLED always-on display',
-                'Titanium case with sapphire crystal glass for durability',
-                'Advanced sleep tracking and body composition analysis',
-                'ECG and blood pressure monitoring for health insights',
-                'LTE connectivity for calls, messages, and apps',
-                'Google Assistant & Samsung Pay for convenience',
-                'Up to 80-hour battery life on a single charge',
-                'Military-grade durability with IP68 rating',
-                'Built-in GPS for outdoor activities and workouts',
-              ],
-            },
-            {
-              img: Trend5,
-              title:
-                'JBL PartyBox 310 Bluetooth Party Speaker with 240W Power, Bass Boost, Dynamic Light Show, and Built-in Mic Inputs',
-              price: '29,999',
-              orgPrice: '35,000',
-              features: [
-                '240W powerful JBL sound with deep bass',
-                'Dynamic light show that syncs with the music',
-                '18-hour battery life for all-day partying',
-                'Built-in mic and guitar inputs for live performances',
-                'Splashproof design (IPX4) for outdoor use',
-                'Bluetooth, USB, and AUX connectivity',
-                'Dual speaker pairing for stereo sound',
-                'Wheels and handle for easy portability',
-                'Customizable EQ settings via JBL app',
-              ],
-            },
-          ].map((laptop, index) => (
+          {colm1.map((laptop, index) => (
             <div key={index} className={styles.tp1IN}>
               <div className={styles.tp1INx}>
                 <Image
@@ -1122,98 +1314,7 @@ export default function Sect() {
         </div>
 
         <div className={styles.tP2}>
-          {[
-            {
-              img: Trend6,
-              title:
-                'ASUS ROG Strix G16 Gaming Laptop with Intel Core i9, NVIDIA RTX 4060, 16GB RAM, 1TB SSD, and 165Hz Display',
-              price: '1,29,000',
-              orgPrice: '1,45,000',
-              features: [
-                '16-inch Full HD IPS display with 165Hz refresh rate',
-                'Intel Core i9-13900H processor for extreme gaming performance',
-                'NVIDIA GeForce RTX 4060 with 8GB GDDR6 VRAM',
-                '16GB DDR5 RAM for smooth multitasking',
-                '1TB PCIe Gen4 SSD for ultra-fast load times',
-                'RGB-backlit keyboard with customizable lighting',
-                'AI-powered cooling with liquid metal thermal compound',
-                'Wi-Fi 6E and Bluetooth 5.3 for next-gen connectivity',
-                'Dolby Atmos surround sound with Hi-Res Audio',
-              ],
-            },
-            {
-              img: Trend7,
-              title:
-                'Samsung Galaxy Tab S9 Ultra 5G - 14.6-inch AMOLED, Snapdragon 8 Gen 2, 12GB RAM, 512GB Storage, S-Pen Included',
-              price: '99,000',
-              orgPrice: '1,15,000',
-              features: [
-                '14.6-inch Super AMOLED display with 120Hz refresh rate',
-                'Snapdragon 8 Gen 2 processor for flagship performance',
-                '12GB RAM and 512GB internal storage',
-                'S-Pen with ultra-low latency for precision writing',
-                'Dual rear cameras (13MP + 8MP) and 12MP front camera',
-                'IP68 water and dust resistance for durability',
-                'Massive 11200mAh battery with 45W fast charging',
-                'Samsung DeX mode for desktop-like multitasking',
-                'Wi-Fi 6 and 5G connectivity for high-speed browsing',
-              ],
-            },
-            {
-              img: Trend8,
-              title:
-                'Bose QuietComfort Ultra Wireless Noise Cancelling Headphones with Spatial Audio and 24-Hour Battery Life',
-              price: '32,000',
-              orgPrice: '38,000',
-              features: [
-                'Advanced noise cancellation with custom modes',
-                'Bose Immersive Audio for spatial sound experience',
-                '24-hour battery life with quick charge support',
-                'Customizable EQ via Bose Music app',
-                'Bluetooth 5.3 for stable and efficient connectivity',
-                'Multipoint pairing to connect multiple devices',
-                'Soft protein leather ear cushions for all-day comfort',
-                'Touch and voice controls for easy operation',
-                'USB-C fast charging with 3.5mm wired option',
-              ],
-            },
-            {
-              img: Trend9,
-              title:
-                'Dyson V15 Detect Absolute Cordless Vacuum Cleaner with Laser Dust Detection, 60-Minute Runtime, and HEPA Filtration',
-              price: '63,000',
-              orgPrice: '75,000',
-              features: [
-                'Laser dust detection for revealing hidden particles',
-                'Powerful Hyperdymium motor with 230AW suction',
-                'Up to 60 minutes of runtime on eco mode',
-                'Advanced HEPA filtration traps 99.99% of dust',
-                'Auto-adjusting suction based on floor type',
-                'LCD screen displays real-time cleaning data',
-                'Click-in battery system for extended cleaning sessions',
-                'Includes multiple attachments for versatile cleaning',
-                'Lightweight and ergonomic design for easy handling',
-              ],
-            },
-            {
-              img: Trend10,
-              title:
-                'Garmin Fenix 7X Sapphire Solar Multisport GPS Smartwatch with AMOLED Display, 28-Day Battery, and Advanced Metrics',
-              price: '85,000',
-              orgPrice: '97,000',
-              features: [
-                '1.4-inch AMOLED display with always-on mode',
-                'Solar charging extends battery life up to 28 days',
-                'Multi-band GPS with precise tracking',
-                'VO2 max, recovery time, and advanced training metrics',
-                'Garmin Pay for contactless payments',
-                'Built-in music storage for offline listening',
-                '24/7 health monitoring with heart rate and SpO2 tracking',
-                '50m water resistance for swimming and outdoor use',
-                'Preloaded maps for hiking, skiing, and cycling',
-              ],
-            },
-          ].map((laptop, index) => (
+          {colm2.map((laptop, index) => (
             <div key={index} className={styles.tp1IN}>
               <div className={styles.tp1INx}>
                 <Image
@@ -1255,103 +1356,7 @@ export default function Sect() {
         </div>
 
         <div className={styles.tP3}>
-          {[
-            {
-              img: Trend11,
-
-              title:
-                'Dell XPS 15 - (Intel Core i9 13th Gen/32GB RAM/1TB SSD/Windows 11/NVIDIA RTX 4060)',
-              price: '1,45,000',
-              orgPrice: '1,65,000',
-              features: [
-                '13th Gen Intel Core i9 Processor',
-                '32GB DDR5 RAM',
-                '1TB NVMe SSD',
-                '15.6-inch 4K OLED Touch Display',
-                'NVIDIA GeForce RTX 4060 8GB',
-                'Aluminum CNC Chassis',
-                'Thunderbolt 4 Ports',
-                'Wi-Fi 6E & Bluetooth 5.3',
-                'Backlit Keyboard with Fingerprint Sensor',
-              ],
-            },
-            {
-              img: Trend12,
-
-              title:
-                'Apple MacBook Pro M3 Max - (64GB RAM/2TB SSD/macOS) Liquid Retina XDR Display',
-              price: '3,99,000',
-              orgPrice: '4,20,000',
-              features: [
-                'M3 Max chip with 16-core CPU and 40-core GPU',
-                '64GB Unified Memory',
-                '2TB SSD Storage',
-                '16.2-inch Liquid Retina XDR Display',
-                'ProMotion Technology (120Hz Refresh Rate)',
-                '6-Speaker High-Fidelity Audio System',
-                'Thunderbolt 4, HDMI & SDXC Card Slot',
-                'macOS Sonoma with Advanced AI Features',
-                'MagSafe 3 Charging',
-              ],
-            },
-            {
-              img: Trend13,
-
-              title:
-                'ASUS ROG Zephyrus G16 - (Intel Core i7 14th Gen/32GB RAM/1TB SSD/Windows 11/NVIDIA RTX 4070)',
-              price: '1,89,000',
-              orgPrice: '2,10,000',
-              features: [
-                '14th Gen Intel Core i7 Processor',
-                '32GB DDR5 RAM (Expandable up to 64GB)',
-                '1TB PCIe Gen 4 SSD',
-                '16-inch QHD+ 240Hz IPS Display',
-                'NVIDIA GeForce RTX 4070 8GB',
-                'AI-enhanced Cooling System',
-                'Dolby Atmos Surround Sound',
-                'MUX Switch for GPU Performance Boost',
-                'Wi-Fi 6E & Bluetooth 5.2',
-              ],
-            },
-            {
-              img: Trend14,
-
-              title:
-                'Lenovo Legion 7 Pro - (AMD Ryzen 9 7945HX/32GB RAM/1TB SSD/Windows 11/NVIDIA RTX 4080) High-Performance Gaming Laptop (16 inch, Storm Gray, 2.3 Kg)',
-              price: '2,50,000',
-              orgPrice: '2,75,000',
-              features: [
-                'AMD Ryzen 9 7945HX 16-Core Processor',
-                '32GB DDR5 RAM (Expandable to 64GB)',
-                '1TB PCIe 4.0 SSD',
-                '16-inch Mini LED HDR Display (165Hz)',
-                'NVIDIA GeForce RTX 4080 12GB',
-                'Legion Coldfront 4.0 Cooling System',
-                'TrueStrike RGB Keyboard',
-                'Wi-Fi 6E & Ethernet 2.5Gbps',
-                'AI-Powered Battery Optimization',
-              ],
-            },
-            {
-              img: Trend15,
-
-              title:
-                'HP Spectre x360 - (Intel Core i7 13th Gen/16GB RAM/1TB SSD/Windows 11/Intel Iris Xe) 2-in-1 Convertible Laptop (14 inch, Nightfall Black, 1.3 Kg)',
-              price: '1,25,000',
-              orgPrice: '1,40,000',
-              features: [
-                '13th Gen Intel Core i7 Processor',
-                '16GB LPDDR5 RAM',
-                '1TB SSD NVMe Storage',
-                '14-inch OLED Touchscreen Display',
-                '360° Convertible Design',
-                'HP Sure View Privacy Screen',
-                'Bang & Olufsen Quad Speakers',
-                'Wi-Fi 6E & Bluetooth 5.3',
-                'HP Fast Charge (50% in 30 min)',
-              ],
-            },
-          ].map((laptop, index) => (
+          {colm3.map((laptop, index) => (
             <div key={index} className={styles.tp1IN}>
               <div className={styles.tp1INx}>
                 <Image

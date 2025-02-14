@@ -104,7 +104,7 @@ export default function Cart() {
         title: item.title,
         price: item.price,
         orgPrice: item.orgPrice,
-        image: item.image,
+        image: item.image ? item.image : item.image.src,
         features: item.features,
       },
     });
@@ -117,7 +117,7 @@ export default function Cart() {
         title: item.title,
         price: item.price,
         orgPrice: item.orgPrice,
-        image: item.image,
+        image: item.image ? item.image : item.image.src,
         features: item.features,
       },
     });

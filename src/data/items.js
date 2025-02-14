@@ -1,8 +1,6 @@
-import lapsvg from '@/images/lapsvg.webp';
-
 export const items = [
   {
-    img: lapsvg,
+    img: 'https://rukminim2.flixcart.com/image/312/312/xif0q/computer/a/z/m/g614jv-n3474ws-gaming-laptop-asus-original-imah2fk856vncuqu.jpeg?q=70',
     item: 'ASUS ROG Strix G15 (Ryzen 7 6800H/16GB RAM/1TB SSD/NVIDIA RTX 3060/Windows 11)',
     price: '40,000',
     features: [
@@ -17,7 +15,7 @@ export const items = [
     disPercent: '40',
   },
   {
-    img: lapsvg,
+    img: 'https://rukminim2.flixcart.com/image/312/312/xif0q/computer/z/y/y/-original-imah5yjk9mscuhsb.jpeg?q=70',
     item: 'Acer Nitro 5 Intel Core i5 11th Gen (16GB RAM/512GB SSD/NVIDIA GTX 1650/Windows 11)',
     price: '58,000',
     features: [
@@ -32,7 +30,7 @@ export const items = [
     disPercent: '50',
   },
   {
-    img: lapsvg,
+    img: 'https://rukminim2.flixcart.com/image/312/312/xif0q/computer/w/b/9/-original-imags9wjnzwgkfvp.jpeg?q=70',
     item: 'MSI Katana GF66 Intel Core i7 12th Gen (16GB RAM/512GB SSD/NVIDIA RTX 3050/Windows 11)',
     price: '80,000',
     features: [
@@ -46,7 +44,7 @@ export const items = [
     disPercent: '50',
   },
   {
-    img: lapsvg,
+    img: 'https://rukminim2.flixcart.com/image/312/312/xif0q/computer/y/x/x/15-fb0147ax-gaming-laptop-hp-original-imahf7yvwdz9jwpp.jpeg?q=70',
     item: 'HP Victus Ryzen 5 5600H (8GB RAM/512GB SSD/NVIDIA GTX 1650/Windows 11)',
     price: '42,000',
     features: [
@@ -61,7 +59,7 @@ export const items = [
     disPercent: '30',
   },
   {
-    img: lapsvg,
+    img: 'https://rukminim2.flixcart.com/image/312/312/xif0q/computer/1/4/r/-original-imah4zcwvvhmzgxr.jpeg?q=70',
     item: 'Lenovo Legion 5 Intel Core i7 10th Gen (16GB RAM/1TB HDD + 256GB SSD/NVIDIA GTX 1660Ti/Windows 10)',
     price: '50,000',
     features: [
