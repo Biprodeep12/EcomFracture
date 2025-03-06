@@ -19,6 +19,8 @@ export default function Cart() {
 
       if (currentUser) {
         await fetchCartItems(currentUser.uid);
+      } else {
+        setLoading(false);
       }
     });
 

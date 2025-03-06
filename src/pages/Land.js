@@ -198,6 +198,10 @@ export default function ClickedItems() {
   };
 
   const handleCheck = (title, price, orgPrice, image, features) => {
+    if (!user) {
+      alert('Please log in to buy items.');
+      return;
+    }
     router.push({
       pathname: '/checkPage',
       query: {
